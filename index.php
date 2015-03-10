@@ -22,7 +22,8 @@ $database = new DB(); // Oppretter database-objekt
 	if($Submitted == true){
 	echo "$Brukernavn";
 	echo "$Passord";
-}
+	//$database->logIn();
+	}
 
 ?>
 </body>

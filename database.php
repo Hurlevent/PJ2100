@@ -17,7 +17,11 @@ class DB {
 		}
 
 	function logIn($user, $pass){
-			if(!$db->verify($user, $pass))
+		$sql = $db->prepare("SELECT Navn FROM Brukere WHERE Passord = :pass");
+		$result = mysql_query(passowner);
+		if($result.equals($user)){
+			setcookie($user, qwerty, mktime(). time()+10);
+		}
 		}
 
 	function showRooms(){
@@ -27,11 +31,11 @@ class DB {
 	function rentRoom(){
 
 	}
-
+	/*
 	function redirect(){
 		header("location: ./");
 		exit();
-	}
+	}*/
 	
 	}
 ?>

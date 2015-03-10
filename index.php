@@ -1,31 +1,28 @@
+<?php
+include_once('database.php'); // importerer classen som snakker med databasens
+$database = new DB(); // Oppretter database-objekt
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8";
 </head>
 <body>
+<form action="index.php" method="post">
+	<p>Brukernavn</p>
+	<input type="username" name="username" required />
+	<p>Passord</p>
+	<input type="password" name="password" required />
+	<input type="submit" name="enter">
+</form>
 <?php
-$servername = "127.0.0.1:3306";
-$username = "root";
-$password = "";
-
-try {
-	$conn = new PDO("mysql:host=$servername;dbname=woact", $username, $password);
-	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	echo "Connected successfully";
-
-} catch(PDOException $e){
-	echo "Connection failed: " . $e->getMessage();
+	$Submitted = $_POST['enter'];
+	$Brukernavn = $_POST['username'];
+	$Passord = $_POST['password'];
+	if($Submitted == true){
+	echo "$Brukernavn";
+	echo "$Passord";
 }
-
-?>
-<h3>Login</h3>
-<p>Brukernavn</p>
-<input type="username" name="username" required />
-<p>Passord</p>
-<input type="password" name="password" required />
-
-<?php
 
 ?>
 </body>

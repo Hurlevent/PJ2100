@@ -12,16 +12,18 @@ class DB {
 
     public function logIn($user, $pass){
 
-
         $sql = "SELECT Navn, Passord FROM Brukere WHERE Navn = '$user' AND Passord = '$pass'";
         $result = $this->connection->query($sql);
         if(mysqli_num_rows($result)) {
-            $usercookie = "SELECT Navn FROM Brukere WHERE Navn = '$user'";
-            $usercookieVal = $this->connection->query($usercookie)->fetch_assoc();
-            $passcookie = "SELECT Passord FROM Brukere WHERE Navn = '$user'";
-            $passcookieVal = $this->connection->query($passcookie)->fetch_assoc();
-            setcookie("Username", $usercookieVal['Navn'], time() + (5 * 60));
-            setcookie("Password", $passcookieVal['Passord'], time() + (5 * 60));
+           // $usercookie = "SELECT Navn FROM Brukere WHERE Navn = '$user'";
+           // $usercookieVal = $this->connection->query($usercookie)->fetch_assoc();
+           // $passcookie = "SELECT Passord FROM Brukere WHERE Navn = '$user'";
+           // $passcookieVal = $this->connection->query($passcookie)->fetch_assoc();
+           // setcookie("Username", $usercookieVal['Navn'], time() + (5 * 60));
+           // setcookie("Password", $passcookieVal['Passord'], time() + (5 * 60));
+            $_SESSION["Username"] = $user;
+            $_SESSION["Password"] = $pass;
+
             return true;
         }
 

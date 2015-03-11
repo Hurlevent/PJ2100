@@ -2,6 +2,8 @@
 
 ## Hvordan sette opp kjøring av nettsiden på egen maskin
 
+- Installer [Composer](https://getcomposer.org/), det er lagt ut fremgangsmåte i PHP-forelesningen
+- Kjør følgende kommando for å installere bibliotekene i composer.json: composer install
 - Installer MAMP (gratisversjonen)
 - Klikk «Start Servers»
 - Gå til «Preferences» og «Web Server», endre «Document Root» til der GitHub repositoriet av siden er lagret

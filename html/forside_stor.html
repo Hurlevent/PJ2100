@@ -1,13 +1,56 @@
 <DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name = "viewport" content="width=device-width, initial-scale=1.0">
-<title>Bestill grupperom</title>
-
+	<meta charset="UTF-8">
+	<meta name = "viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bestill grupperom</title>
+	<link type="html/css" rel="stylesheet" href="../css/forside_css.css" />
+	<link type="html/css" rel="stylesheet" href="../css/felles.css" />
+	<script>
+	  var d = new Date();
+	  document.getElementById("idag").innerHTML = d.toString();
+	</script>
 </head>
-<body>
 
+<body>
+<div id="wrapper">
+	<header>
+		<img src="../bilder/WACT_hvit_rgb.eps" alt="logo" height="100" width="100" />
+	</header>
+	<nav>
+		<ul>
+			<li class="menyBoksList">Meny</li>
+			<li class="menyBoksList">Kalender</li>
+		</ul>
+	</nav>
+	<menu>
+		<dl>
+			<li>Endre dag</li>
+			<li>Endre tid</li>
+			<li>Endre rom</li>
+			<li>Slett booking</li>
+			
+		</dl>
+	</menu>
+	<table class="kalender">
+		<tr>
+			<th><p id="idag"></p></th>
+			<td>07:00 - 08.00</td>
+			<td>08-09</td>
+			<td>09-10</td>
+			<td>10-11</td>
+			<td>12-13</td>
+			<td>13-14</td>
+			<td>14-15</td>
+		</tr>
+	</table>
+	<!-- <img class="kalender" src="../bilder/kalender.jpg" alt="kalender" /> -->
+	<button type="knapp">Registrer tid
+	</button>
+	<footer>
+		<p>Din neste booking er: </p>
+	</footer>
+</div>
 </body>
 
 </html>

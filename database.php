@@ -12,17 +12,16 @@ class DB {
 
     public function logIn($user, $pass){
 
-        if(isset($_COOKIE['$user'])){
-            return true;
-        }
 
         $sql = "SELECT Navn, Passord FROM Brukere WHERE Navn = '$user' AND Passord = '$pass'";
         $result = $this->connection->query($sql);
         if(mysqli_num_rows($result)) {
-            $cookieName = $user;
-            $cookie = "SELECT Cookie FROM Brukere WHERE Navn = '$user'";
-            $cookieValue = $this->connection->query($cookie)->fetch_assoc(); // this is currently an array, but has to be a string
-            setcookie($cookieName, $cookieValue['Cookie'], time() + (5 * 60));
+            $usercookie = "SELECT Navn FROM Brukere WHERE Navn = '$user'";
+            $usercookieVal = $this->connection->query($usercookie)->fetch_assoc();
+            $passcookie = "SELECT Passord FROM Brukere WHERE Navn = '$user'";
+            $passcookieVal = $this->connection->query($passcookie)->fetch_assoc();
+            setcookie("Username", $usercookieVal['Navn'], time() + (5 * 60));
+            setcookie("Password", $passcookieVal['Passord'], time() + (5 * 60));
             return true;
         }
 

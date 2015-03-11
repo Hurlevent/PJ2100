@@ -1,6 +1,5 @@
 {
   "require": {
-    "leafo/scssphp": "0.0.12",
-    "opendena/jade.php":"dev-master"
+    "mthaml/mthaml": "1.7.0"
   }
 }

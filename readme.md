@@ -1,4 +1,6 @@
-# Hvordan sette opp kjøring av nettsiden på egen maskin
+# Tinder for rombooking – versjon 2.0
+
+## Hvordan sette opp kjøring av nettsiden på egen maskin
 
 - Installer MAMP (gratisversjonen)
 - Klikk «Start Servers»
@@ -10,7 +12,7 @@
 
 Med mindre det er endringer i databasemodellen eller liknende, trenger du kun og åpne MAMP og starte serverene neste gang du vil kjøre siden.
 
-# Vis feilmeldinger i MAMP
+## Vis feilmeldinger i MAMP
 
 - Åpne /Applications/MAMP/bin/php/php5.6.2/conf/php.ini i et tekstredigeringsprogram
 - Endre «display_errors = Off» til «display_errors = On»

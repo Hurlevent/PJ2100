@@ -1,21 +1,12 @@
 <?php
-require('database.php');
+require('../../database.php');
 $database = new DB();
 session_start(); // session objekt
-/*
-if(isset($_COOKIE['Username']) && isset($_COOKIE['Password'])) {
-    if ($database->logIn($_COOKIE['Username'], $_COOKIE['Password'])) {
-        echo "You're in!";
-        header('Location: Welcome.php');
-    } else {
-        echo "Cookie represent incorrect values";
-    }
-}
-*/
+
 if(isset($_SESSION["Username"]) && isset($_SESSION["Password"])){
     if($database->logIn($_SESSION["Username"], $_SESSION["Password"])){
         echo "You're in!";
-        header('Location: Welcome.php');
+        header('Location: desktop_home.php');
     } else {
         echo "Session contains incorrect values";
     }
@@ -37,11 +28,11 @@ if($username && $password){
     if($database->logIn($username, $password)){
         echo "You're in!";
         echo "Cookies have been set";
-        header('Location: Welcome.php');
+        header('Location: desktop_home.php');
     } else {
         echo "Incorrect username or password";
     }
 } else {
-    header("Location: index.php");
+    header("Location: desktop_home.php");
 }
 ?>

@@ -30,7 +30,7 @@ class DB {
             return false;
         }
     }
-
+    // this funtion is for testing only
     public function test($user){
         $sql = "SELECT * FROM Brukere WHERE Navn = '$user'";
         $result = $this->connection->query($sql);

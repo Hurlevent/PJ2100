@@ -39,6 +39,7 @@ nav {
 	
 menu {
 	display: inline-block;
+	float: left;
 	
 	}
 dl {
@@ -68,3 +69,5 @@ footer {
 	margin: auto;
 	text-align: center;
 	}
+
+

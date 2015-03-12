@@ -44,18 +44,18 @@ $password = $_SESSION["Password"];
             <?php
             if($database->logIn($username, $password)){
                 echo "<li class='navbar'>Welcome back, " . $username . "</li>";
-                echo "<li class='navbar'><form action='logOut.php' method='POST' />
+                echo "<form action='logOut.php' method='POST' class='navbar'/>
                 <input type='hidden' name='logOut' />
                 <input type='submit' value='Log out' />
-                </form></li>";
+                </form>";
 
             } else {
 
-                echo "<li class='navbar'><form action='login.php' method='POST'>
+                echo "<form action='login.php' method='POST' class='navbar'>
                 <input type='username' name='username' required />
                 <input type='password' name='password' required />
                 <input type='submit' value='Log in'>
-                </form></li>";
+                </form>";
             }
             ?>
 		</ul>

@@ -1,0 +1,89 @@
+<DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name = "viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bestill grupperom</title>
+	<link type="html/css" rel="stylesheet" href="../css/forside_css.css" />
+	<link type="html/css" rel="stylesheet" href="../css/felles.css" />
+</head>
+
+<body>
+<div id="wrapper">
+	<header>
+		<img src="../bilder/WACT_hvit_rgb.eps" alt="logo" height="100" width="100" />
+	</header>
+	<nav>
+		<ul>
+			<li class="menyboksList">Meny</li>
+			<li class="menyboksList">Kalender</li>
+		</ul>
+	</nav>
+	<menu>
+		<dl>
+			<li>Start 
+				<select>
+				  <option value="8">08:00</option>
+				  <option value="9">09:00</option>
+				</select>
+			</li>
+			<li>Varighet
+				<select>
+				  <option value="1t">1</option>
+				  <option value="2t">2</option>
+				</select>
+				timer
+			</li>			
+			<li>Prosjektor
+				<form>
+				<input type="checkbox" name="prosjektor" value="prosjektor" checked>
+				Prosjektor
+				</form>
+			</li>
+			<li>Antall personer
+				<select>
+				  <option value="2pers">2</option>
+				  <option value="3pers">3</option>
+				  <option value="4pers">4</option>
+				</select>
+			</li>
+			
+		</dl>
+	</menu>
+	<table class="kalender">
+		<tr>
+			<th><p id="idag"></p></th>
+			<td>07:00</td>
+			<td>08</td>
+			<td>09</td>
+			<td>10</td>
+			<td>11</td>
+			<td>12</td>
+			<td>13</td>
+		</tr>
+	</table>
+	<!-- <img class="kalender" src="../bilder/kalender.jpg" alt="kalender" /> -->
+	<button type="knapp">Registrer tid
+	</button>
+	<footer>
+		<p>Mine møter:</p>
+		<table>
+			<tr>
+				<th>Dato</th>
+				<th>Romnavn</th>
+				<th>Starttid</th>
+				<th>Sluttid</th>
+			</tr>
+			<tr>
+				<td>"Første booking</td>
+				<td>Rom 81</td>
+				<td>10.15</td>
+				<td>16.00</td>
+				<td><button>Endre</button></td>
+			</tr>
+		<button>Ny booking</button>
+	</footer>
+</div>
+</body>
+
+</html>

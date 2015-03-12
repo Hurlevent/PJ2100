@@ -1,8 +1,8 @@
 <?php
 
-require 'database_config.php';
+require 'config.php';
 
-$query = "CREATE TABLE MyGuests (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,firstname VARCHAR(30) NOT NULL,lastname VARCHAR(30) NOT NULL,email VARCHAR(50),reg_date TIMESTAMP)";
+$query = "CREATE TABLE room (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, name VARCHAR(30) NOT NULL, projector ENUM('HDMI', 'VGA'), capacity INT(1) NOT NULL)";
 
 if (mysqli_query($link, $query)) {
   echo "things created";

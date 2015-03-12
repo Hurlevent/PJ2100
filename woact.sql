@@ -16,8 +16,10 @@ DROP TABLE IF EXISTS Grupperom;
 CREATE TABLE Grupperom
 (
 RomID int(30) NOT NULL UNIQUE AUTO_INCREMENT,
-harProsjektor boolean DEFAULT false,
+RomNavn VARCHAR(10),
+harProsjektor boolean DEFAULT'1',
 kvadratMeter int(10),
+kapasitet INT DEFAULT'1',
 PRIMARY KEY (RomID)
 );
  
@@ -44,7 +46,6 @@ CREATE TABLE GrupperomBrukere
 (
 RomID int(30) NOT NULL,
 BrukerID int(30) NOT NULL,
-AntallStudenter int(30) NOT NULL,
 FraTid DATETIME,
 TilTid DATETIME,
 PRIMARY KEY (RomID, BrukerID),
@@ -54,9 +55,9 @@ FOREIGN KEY (BrukerID) REFERENCES Brukere (BrukerID)
 
 /*DATE_FORMAT('dato','%d-%m-%Y')*/ -- Vi burde formatere datoene
 
-INSERT INTO Grupperom VALUES (NULL, false, 10);
-INSERT INTO Grupperom VALUES (NULL, true, 15);
-INSERT INTO Grupperom VALUES (NULL, false, 12);
+INSERT INTO Grupperom VALUES (NULL, 'Vimle', false, 10, 3);
+INSERT INTO Grupperom VALUES (NULL, 'Rom 81', true, 15, 4);
+INSERT INTO Grupperom VALUES (NULL, 'Rom 41', false, 12, 2);
 
 INSERT INTO Brukere VALUES (NULL, 'Oliver', 'hei', 'Teknologi');
 INSERT INTO Brukere VALUES (NULL, 'Magnus', 'ja', 'Kommunikasjon');

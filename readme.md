@@ -8,7 +8,7 @@
 - Klikk «Start Servers»
 - Gå til «Preferences» og «Web Server», endre «Document Root» til der GitHub repositoriet av siden er lagret
 - Klikk «Open WebStart page» og åpne «phpMyAdmin»
-- Gå til «Databases» og opprett en ny database med navnet pj2100
+- Gå til «Databases» og opprett en ny database med navnet rombooking
 - Siden er nå tilgjengelig på localhost:8888
 - Kjør «create_tables.php» for og etablere databasemodellen
 

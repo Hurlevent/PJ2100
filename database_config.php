@@ -2,7 +2,7 @@
 
 $user = 'root';
 $password = 'root';
-$db = 'pj2100';
+$db = 'rombooking';
 $host = 'localhost';
 $port = 8889;
 

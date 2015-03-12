@@ -1,5 +1,5 @@
 <?php
-require('../../database.php');
+require('database.php');
 $database = new DB();
 session_start(); // session objekt
 

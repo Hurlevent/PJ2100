@@ -1,5 +1,5 @@
 <?php
-require("../../database.php");
+require("database.php");
 $database = new DB();
 session_start(); // session objekt
 if(!isset($_SESSION["Username"])){
@@ -27,14 +27,14 @@ $password = $_SESSION["Password"];
         }
 
         ?>
-	<link type="html/css" rel="stylesheet" href="../../css/forside_css.css" />
-	<link type="html/css" rel="stylesheet" href="../../css/felles.css" />
+	<link type="html/css" rel="stylesheet" href="css/forside_css.css" />
+	<link type="html/css" rel="stylesheet" href="css/felles.css" />
 </head>
 
 <body>
 <div id="wrapper">
 	<header>
-		<img src="../../bilder/WACT_hvit_rgb.eps" alt="logo" height="100" width="100" />
+		<img src="bilder/WACT_hvit_rgb.eps" alt="logo" height="100" width="100" />
 	</header>
 	<nav>
 		<ul>

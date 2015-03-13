@@ -34,7 +34,7 @@ $password = $_SESSION["Password"];
 <body>
 <div id="wrapper">
 	<header>
-		<img src="bilder/WACT_hvit_rgb.eps" alt="logo" height="100" width="100" />
+		<img src="bilder/WACT_hvit_rgb.png" alt="logo" height="99" width="100" />
 	</header>
 	<nav>
 		<ul>

@@ -1,9 +1,9 @@
 <?php
 class DB {
-    private $username = "root";
-    private $password = "";
-    private $host = "127.0.0.1:3306";
-    private $database = "woact";
+    private $username = "eftoli14";
+    private $password = "eftoli14";
+    private $host = "mysql.nith.no";
+    private $database = "eftoli14";
     private $connection = null;
 
     public function __construct(){

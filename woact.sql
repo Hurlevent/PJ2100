@@ -41,16 +41,17 @@ PRIMARY KEY (BrukerID)
 -- Table for connecting 'Grupperom' AND 'Brukere'
 --
 
-DROP TABLE IF EXISTS GrupperomBrukere;
-CREATE TABLE GrupperomBrukere 
+DROP TABLE IF EXISTS Booking;
+CREATE TABLE Booking
 (
-RomID int(30) NOT NULL,
+ReservationID int(30) NOT NULL UNIQUE AUTO_INCREMENT,
 BrukerID int(30) NOT NULL,
-FraTid DATETIME,
-TilTid DATETIME,
-PRIMARY KEY (RomID, BrukerID),
-FOREIGN KEY (RomID) REFERENCES Grupperom (RomID),
-FOREIGN KEY (BrukerID) REFERENCES Brukere (BrukerID)
+TimeFrom DATETIME NOT NULL,
+TimeTo DATETIME NOT NULL,
+RomID int(30) NOT NULL,
+PRIMARY KEY (ReservationID),
+FOREIGN KEY (BrukerID) REFERENCES Brukere (BrukerID),
+FOREIGN KEY (RomID) REFERENCES Grupperom (RomID) 
 );
 
 /*DATE_FORMAT('dato','%d-%m-%Y')*/ -- Vi burde formatere datoene

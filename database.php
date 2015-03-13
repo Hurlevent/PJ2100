@@ -7,7 +7,7 @@ class DB {
     private $connection = null;
 
     public function __construct(){
-        $this->connection = mysqli_connect($this->host, $this->username, $this->password, $this->database);
+            $this->connection = mysqli_connect($this->host, $this->username, $this->password, $this->database);
     }
 
     public function logIn($user, $pass){

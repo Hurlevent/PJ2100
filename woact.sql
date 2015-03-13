@@ -9,56 +9,55 @@ CREATE SCHEMA woact;
 USE woact;
 
 --
--- Structure for table 'Grupperom'
+-- Structure for table ''
 --
 
-DROP TABLE IF EXISTS Grupperom;
-CREATE TABLE Grupperom
+DROP TABLE IF EXISTS room;
+CREATE TABLE room
 (
-RomID int(30) NOT NULL UNIQUE AUTO_INCREMENT,
-RomNavn VARCHAR(10),
-harProsjektor boolean DEFAULT'1',
-kvadratMeter int(10),
-kapasitet INT DEFAULT'1',
-PRIMARY KEY (RomID)
+roomID int(6) UNSIGNED AUTO_INCREMENT,
+name VARCHAR(30) NOT NULL,
+projector boolean DEFAULT false,
+capacity INT(4) NOT NULL,
+PRIMARY KEY (roomID)
 );
  
 --
--- Structure for table 'Brukere'
+-- Structure for table ''
 --
 
-DROP TABLE IF EXISTS Brukere;
-CREATE TABLE Brukere 
+DROP TABLE IF EXISTS MyGuests;
+CREATE TABLE MyGuests 
 (
-BrukerID int(30) NOT NULL UNIQUE AUTO_INCREMENT,
-Navn VARCHAR(50) NOT NULL,
-Passord VARCHAR(50),
-Studie ENUM('Kunst','Kommunikasjon','Teknologi'),
-PRIMARY KEY (BrukerID)
+MyGuestsID int(6) UNSIGNED AUTO_INCREMENT,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50) NOT NULL,
+reg_date TIMESTAMP,
+PRIMARY KEY (MyGuestsID)
 );
 
 --
--- Table for connecting 'Grupperom' AND 'Brukere'
+-- Table to see if in use
 --
 
-DROP TABLE IF EXISTS GrupperomBrukere;
-CREATE TABLE GrupperomBrukere 
+/*
+DROP TABLE IF EXISTS InUse;
+CREATE TABLE InUse 
 (
-RomID int(30) NOT NULL,
-BrukerID int(30) NOT NULL,
-FraTid DATETIME,
-TilTid DATETIME,
-PRIMARY KEY (RomID, BrukerID),
-FOREIGN KEY (RomID) REFERENCES Grupperom (RomID),
-FOREIGN KEY (BrukerID) REFERENCES Brukere (BrukerID)
+roomID int(6) NOT NULL,
+GuestsInRoom int(30) NOT NULL,
+FromTime TIMESTAMP,
+ToTime TIMESTAMP,
+PRIMARY KEY (roomID),
+FOREIGN KEY (roomID) REFERENCES room (roomID),
+FOREIGN KEY (GuestsInRoom) REFERENCES MyGuests (MyGuestsID)
 );
 
-/*DATE_FORMAT('dato','%d-%m-%Y')*/ -- Vi burde formatere datoene
+INSERT INTO room (name, projector, capacity) VALUES ('Thor', TRUE, '4'), ('Oden', TRUE, '4'), ('Balder', FALSE, '4'), ('Frej', TRUE, '3'), ('Höder', TRUE, '4'), ('Heimdall', FALSE, '4'); 
+INSERT INTO MyGuests (firstname, lastname, email, reg_date) VALUES ()
 
-INSERT INTO Grupperom VALUES (NULL, 'Vimle', false, 10, 3);
-INSERT INTO Grupperom VALUES (NULL, 'Rom 81', true, 15, 4);
-INSERT INTO Grupperom VALUES (NULL, 'Rom 41', false, 12, 2);
+*/
 
-INSERT INTO Brukere VALUES (NULL, 'Oliver', 'hei', 'Teknologi');
-INSERT INTO Brukere VALUES (NULL, 'Magnus', 'ja', 'Kommunikasjon');
-INSERT INTO Brukere VALUES (NULL, 'Aslak', 'nei', 'Teknologi');
+select * from room
+

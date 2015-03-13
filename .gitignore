@@ -1,7 +1,5 @@
 vendor
 composer.lock
 *.xml
-
 *.iml
-
 .idea/.name

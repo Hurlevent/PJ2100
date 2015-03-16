@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang='no'>
   <head>
-    <meta charset="UTF-8">
+    <meta charset='UTF-8'>
     <title><?=$this->e($page_title)?></title>
     <link rel='stylesheet' type='text/css' href='/assets/stylesheets/application.css'>
+    <link rel='stylesheet' type='text/css' href='/assets/stylesheets/felles.css'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   </head>
   <body>
     <header>

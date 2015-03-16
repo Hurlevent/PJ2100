@@ -31,47 +31,54 @@ body {
 /*---------- Header Start -------------------*/
 /*-------------------------------------------*/
 
+/* Main */ 
+
 header {
-    width: 100%;
+    width: 1080px;
     height: 200px;
-    position: absolute;
-    top: 0;
+    margin-bottom: 5px;
 }
+/*-------------------------------------------*/
+/* Logo*/
 
 logo{
-    background-color: red;
     position: relative;
     float: left;
     display: inline-block;
     height: 200px;
     width: 400px;
+    left:-100px;
 }
 logo img{
     width: 100%;
     
 }
+/*-------------------------------------------*/
+/* Navigation */ 
 
 nav {
-    background-color: blue;
-    width:400px;
+    width:340px;
     height: 100%;
     float: left;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-family: sans-serif;
 	}
+
 nav ul {
     padding: 0;
-    margin-top: 100px;
+    margin-top: 114px;
+    float: left;
 }
 
 a{
     text-decoration: none;
     color: rgb(00,00,00)
 }
-a:hover{ border-bottom:1px solid #000; }
 
-
+a:hover{ 
+    border-bottom:1px solid #000; 
+}
 
 .navbar {
 	list-style: none;
@@ -79,21 +86,67 @@ a:hover{ border-bottom:1px solid #000; }
 	display: inline;
 	}
 /*-------------------------------------------*/
+/* My Page */ 
+
+#about{
+    position: relative;
+    width: 340px;
+    float: right;
+    right: -100px;
+}
+
+#about p {
+    text-align: center;
+    padding:5px;
+    font-size: 1.2em;
+    font-family: sans-serif;
+    display: block;
+    margin: 0;
+    margin-top: 109px;
+    margin-right: 45px;
+    margin-left:85px;
+    width: auto;
+}
+
+.icon {
+    margin-top: 100px;
+    margin-left: 45px;
+    float: left;
+    width: 40px;;
+    height: auto;
+    display: block;
+}
+
+/*-------------------------------------------*/
 /*---------- Header Slutt -------------------*/
 /*-------------------------------------------*/
 /*---------- Søk og Kalender Start ----------*/
 /*-------------------------------------------*/
+#finder{
+    width: 1080px;
+    height: 500px;
+    position: relative;
+}
+
+#search_menu{
+    width: 400px;
+    float: left;
+    position: relative;
+}
+#shedule_list{
+   width: 680px; 
+    float: left;
+    position: relative;
+}
 
 .kalender {
 	width: 70%;
 	float: right;
-	display: inline-block;
 	margin-right: 5%;
 	border: 1px solid black;
 	}
 	
 menu {
-	display: inline-block;
 	float: left;
 	
 	}
@@ -110,7 +163,6 @@ button {
 #idag {
 	color: white;
 	background-color: black;
-	display: inline-block;
 	}
 
 table, th, td {
@@ -122,9 +174,8 @@ table, th, td {
 /*---------- Footer Start -------------------*/
 /*-------------------------------------------*/
 footer {
-	border: 1px solid black;
 	bottom: 0;
-	width: 70%;
+	width: 1080px;
 	margin: auto;
 	text-align: center;
 	}

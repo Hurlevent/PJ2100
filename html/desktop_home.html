@@ -9,101 +9,121 @@
 
 <body>
     
-<!-- Wrapper Start ------------------------------------------------------------------------>
+<!-------------------------------------------------------->
+<!-- Wrapper Start --------------------------------------->
 <div id="wrapper">
     
-    <!------------------------------------------------------------------------------------->
+    <!---------------------------------------------------->
+    <!-- Header Start ------------------------------------>
     <header>
-    <!-- Logo ----------------------------------------------------------------------------->
+    <!---------------------------------------------------->
+    <!-- Logo Start -------------------------------------->
 	
-    <logo>
-		<img src="../bilder/Venstrejustert_svart_Oslo_ACT.svg" alt="logo"/>
-	</logo>
-    
-    <!-- Logo slutt ----------------------------------------------------------------------->
-    <!------------------------------------------------------------------------------------->
-    <!-- Navigeringsmeny ------------------------------------------------------------------>
-	
-    <nav>
-		<ul>
-			<li class="navbar" >
-                <a href="http://www.westerdals.no/">Westerdals Oslo ACT</a></li>
-			<li class="navbar">
-                <a href="#">Booking</a></li>
-		</ul>
-	</nav>
-    
-    
-    <!-- Navigeringsmeny slutt ------------------------------------------------------------>
-    </header>
-    <!------------------------------------------------------------------------------------->
-    <!-- Søkmeny -------------------------------------------------------------------------->
-	<!--
+        <logo>
+            <img src="../bilder/Venstrejustert_svart_Oslo_ACT.svg" alt="logo"/>
+        </logo>
 
-    <menu>
-		<dl>
-			<li>Start 
-				<select>
-				  <option value="8">08:00</option>
-				  <option value="9">09:00</option>
-				</select>
-			</li>
-			<li>Varighet
-				<select>
-				  <option value="1t">1</option>
-				  <option value="2t">2</option>
-				</select>
-				timer
-			</li>			
-			<li>Prosjektor
-				<form>
-				<input type="checkbox" name="prosjektor" value="prosjektor" checked>
-				Prosjektor
-				</form>
-			</li>
-			<li>Antall personer
-				<select>
-				  <option value="2pers">2</option>
-				  <option value="3pers">3</option>
-				  <option value="4pers">4</option>
-				</select>
-			</li>
-			
-		</dl>
-	</menu>
+    <!-- Logo End ---------------------------------------->
+    <!---------------------------------------------------->
+    <!-- Navigation Menu --------------------------------->
+	
+        <nav>
+            <ul>
+                <li class="navbar" >
+                    <a href="http://www.westerdals.no/"> Westerdals Oslo ACT</a></li>
+                <li class="navbar">
+                    <a href="#">Booking</a></li>
+            </ul>
+        </nav>
     
-    <!-- Søkmeny slutt -------------------------------------------------------------------->
-    <!------------------------------------------------------------------------------------->
-    <!-- Romliste/Oversikt start----------------------------------------------------------->
-	<!--
-    <table class="kalender">
-		<tr>
-			<th>Rom</th>
-			<th>07:00</th>
-			<th>08:00</th>
-			<th>09:00</th>
-			<th>10:00</th>
-			<th>11:00</th>
-			<th>12:00</th>
-			<th>13:00</th>
-		</tr>
-		<tr>
-		  <td>Rom 81</td>
-		  <td>Ledig</td>
-		  <td>Ledig</td>
-		  <td>Opptatt</td>
-		  <td>Ledig</td>
-		  <td>Opptatt</td>
-		  <td>Opptatt</td>
-		  <td>Opptatt</td>
-		</tr>
-	</table>
-	<button type="knapp">Registrer tid
-	</button>
-    <!-- Romliste/Oversikt slutt ---------------------------------------------------------->
-    <!------------------------------------------------------------------------------------->
-    <!-- Footer start --------------------------------------------------------------------->
-    <!--
+    
+    <!-- Navigeringsmeny End ----------------------------->
+    <!---------------------------------------------------->
+    <!-- About Start ------------------------------------->
+        <div id="about">
+            <img class="icon" src="../bilder/Person%20Icon.svg" alt="icon">
+            <a href="#"><p>Aslak Austenå Løvdal</p></a>
+        </div>
+    <!-- About End --------------------------------------->     <!---------------------------------------------------->
+    </header>
+    <!-- Header End -------------------------------------->
+    <!---------------------------------------------------->
+    <!-- Finder Start ------------------------------------>
+    <div id="finder">
+    <!---------------------------------------------------->
+    <!-- Search Menu Start ------------------------------->
+	
+        <div id="search_menu">
+            <menu>
+                <dl>
+                    <li>Start 
+                        <select>
+                          <option value="8">08:00</option>
+                          <option value="9">09:00</option>
+                        </select>
+                    </li>
+                    <li>Varighet
+                        <select>
+                          <option value="1t">1</option>
+                          <option value="2t">2</option>
+                        </select>
+                        timer
+                    </li>			
+                    <li>Prosjektor
+                        <form>
+                        <input type="checkbox" name="prosjektor" value="prosjektor" checked>
+                        Prosjektor
+                        </form>
+                    </li>
+                    <li>Antall personer
+                        <select>
+                          <option value="2pers">2</option>
+                          <option value="3pers">3</option>
+                          <option value="4pers">4</option>
+                        </select>
+                    </li>
+
+                </dl>
+            </menu>
+        </div>
+    
+    <!-- Search Menu End --------------------------------->
+    <!---------------------------------------------------->
+    <!-- Room Grid Start --------------------------------->
+	
+        <div id="shedule_list">
+            <table class="kalender">
+                <tr>
+                    <th>Rom</th>
+                    <th>07:00</th>
+                    <th>08:00</th>
+                    <th>09:00</th>
+                    <th>10:00</th>
+                    <th>11:00</th>
+                    <th>12:00</th>
+                    <th>13:00</th>
+                </tr>
+                <tr>
+                  <td>Rom 81</td>
+                  <td>Ledig</td>
+                  <td>Ledig</td>
+                  <td>Opptatt</td>
+                  <td>Ledig</td>
+                  <td>Opptatt</td>
+                  <td>Opptatt</td>
+                  <td>Opptatt</td>
+                </tr>
+            </table>
+            <button type="knapp">Registrer tid
+            </button>
+        </div>
+    <!-- Room Grid End ----------------------------------->
+    <!---------------------------------------------------->
+    </div>
+    <!-- Finder End -------------------------------------->
+    <!---------------------------------------------------->
+    <!-- Footer start ------------------------------------>
+    
 	<footer>
 		<p>Mine møter:</p>
 		<table>
@@ -123,12 +143,13 @@
 		<button>Ny booking</button>
 	</footer>
         
-    <!-- Footer slutt --------------------------------------------------------------------->
-    <!------------------------------------------------------------------------------------->
+    <!-- Footer End -------------------------------------->
+    <!---------------------------------------------------->
 </div>
-    
-<!-- Wrapper Slutt ------------------------------------------------------------------------>
+<!-- Wrapper End -----------------------------------------> <!-------------------------------------------------------->
 </body>
-
+<!-- Body End -------------------------------------------->
+<!-------------------------------------------------------->
 </html>
-<!-- Document End ------------------------------------------------------------------------->
+<!-- Document End ---------------------------------------->
+<!-------------------------------------------------------->

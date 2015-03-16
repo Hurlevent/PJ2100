@@ -22,21 +22,12 @@ $connection = mysqli_real_connect(
    $port
 );
 
-/* template rendering config */
+/* page rendering config */
 
-function render_template($template_title, $template_values) {
-  $haml = new MtHaml\Environment('php');
-  $executor = new MtHaml\Support\Php\Executor($haml, array(
-    'cache' => sys_get_temp_dir().'/haml',
-  ));
+function render_page($template_title, $template_values) {
+  // Create new Plates instance
+  $templates = new League\Plates\Engine('./views/');
 
-  $template_file = file_get_contents('./views/' . $template_title . '.html');
-  $template_values_with_content = array();
-  $template_values_with_content['content'] = $template_file;
-
-  foreach ($template_values as $key => $value) {
-    $template_values_with_content[$key] = $value;
-  }
-  
-  $executor->display('./views/layout.haml', $template_values_with_content);
+  // Render a template
+  echo $templates->render($template_title, $template_values);
 }

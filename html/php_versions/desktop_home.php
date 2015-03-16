@@ -60,37 +60,21 @@ $password = $_SESSION["Password"];
             ?>
 		</ul>
 	</nav>
-	<menu>
-		<dl>
-			<li>Start 
-				<select>
-				  <option value="8">08:00</option>
-				  <option value="9">09:00</option>
-				</select>
-			</li>
-			<li>Varighet
-				<select>
-				  <option value="1t">1</option>
-				  <option value="2t">2</option>
-				</select>
-				timer
-			</li>			
-			<li>Prosjektor
-				<form>
-				<input type="checkbox" name="prosjektor" value="prosjektor" checked>
-				Prosjektor
-				</form>
-			</li>
-			<li>Antall personer
-				<select>
-				  <option value="2pers">2</option>
-				  <option value="3pers">3</option>
-				  <option value="4pers">4</option>
-				</select>
-			</li>
-			
-		</dl>
-	</menu>
+<div>
+    <form action='update.php' method='POST'>
+        <p>Velg en annen dato</p>
+        <input type='date' name='dato' />
+        <p>Velg et annet tidspunkt</p>
+        <input type='time' name='tidspunkt' />
+        <p>Antall timer</p>
+        <input type='number' name='timer' />
+        <p>Prosjektor</p>
+        <input type='checkbox' name='prosjektor' />
+        <p>Antall personer</p>
+        <input type='number' name='personer' />
+        <p><input type='submit' value='Endre' /></p>
+    </form>
+</div>
 	<table class="kalender">
 		<tr>
 			<th>Rom</th>
@@ -114,8 +98,6 @@ $password = $_SESSION["Password"];
 		</tr>
 	</table>
 	<!-- <img class="kalender" src="../bilder/kalender.jpg" alt="kalender" /> -->
-	<button type="knapp">Registrer tid
-	</button>
 	<footer>
 		<p>Mine møter:</p>
 		<table>

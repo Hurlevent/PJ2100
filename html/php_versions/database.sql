@@ -45,15 +45,14 @@ CREATE TABLE Booking
 (
 ReservationID int(30) NOT NULL UNIQUE AUTO_INCREMENT,
 BrukerID int(30) NOT NULL,
-TimeFrom DATETIME NOT NULL,
-TimeTo DATETIME NOT NULL,
+FromDate DATE NOT NULL,
+ToDate DATE NOT NULL,
 RomID int(30) NOT NULL,
 PRIMARY KEY (ReservationID),
 FOREIGN KEY (BrukerID) REFERENCES Brukere (BrukerID),
 FOREIGN KEY (RomID) REFERENCES Grupperom (RomID) 
 );
 
-/*DATE_FORMAT('dato','%d-%m-%Y')*/ -- Vi burde formatere datoene
 
 INSERT INTO Grupperom VALUES (NULL, 'Vrimle', false, 10, 3);
 INSERT INTO Grupperom VALUES (NULL, 'Rom 81', true, 15, 4);

@@ -4,10 +4,13 @@ $database = new DB();
 
 $date = new DateTime();
 $timestamp = $date->getTimestamp();
-$currentDate = date('m/d/Y', $timestamp);
+$currentDate = date('Y/m/d', $timestamp); // dagens dato
+$currentTime = date('H:i'); // foreløpig klokkeslett
 
 $dato;
 $tidspunkt;
+$timer;
+$prosjektor;
 if(!isset($_POST["dato"])){
     $dato = $currentDate;
 } else {
@@ -15,12 +18,18 @@ if(!isset($_POST["dato"])){
 }
 
 if(!isset($_POST["tidspunkt"])){
-    $tidspunkt = 2;
+    $tidspunkt = $currentTime;
 } else {
     $tidspunkt = $_POST["tidspunkt"];
 }
 
-if(!isset($_POST[""])){
+if(!isset($_POST["timer"])){
+    $timer = 1;
+} else {
+    $timer = $_POST["timer"];
+}
+
+if(!isset($_POST["prosjektor"])){
 
 }
 ?>

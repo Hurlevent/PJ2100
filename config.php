@@ -6,11 +6,10 @@ require 'vendor/autoload.php';
 
 /* database config */
 
-$user = 'root';
-$password = 'root';
-$db = 'rombooking';
-$host = 'localhost';
-$port = 8889;
+$user = 'eftoli14';
+$password = 'eftoli14';
+$db = 'eftoli14';
+$host = 'mysql.nith.no';
 
 $link = mysqli_init();
 $connection = mysqli_real_connect(
@@ -18,8 +17,7 @@ $connection = mysqli_real_connect(
    $host, 
    $user, 
    $password, 
-   $db,
-   $port
+   $db
 );
 
 /* page rendering config */

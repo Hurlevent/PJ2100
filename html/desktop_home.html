@@ -1,0 +1,174 @@
+<DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name = "viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bestill grupperom</title>
+	<link type="html/css" rel="stylesheet" href="css/felles.css" />
+</head>
+
+<body>
+    
+<!-------------------------------------------------------->
+<!-- Wrapper Start --------------------------------------->
+<div id="wrapper">
+    
+    <!---------------------------------------------------->
+    <!-- Header Start ------------------------------------>
+    <header>
+    <!---------------------------------------------------->
+    <!-- Logo Start -------------------------------------->
+	
+        <logo>
+            <img src="../bilder/Venstrejustert_svart_Oslo_ACT.svg" alt="logo"/>
+        </logo>
+
+    <!-- Logo End ---------------------------------------->
+    <!---------------------------------------------------->
+    <!-- Navigation Menu --------------------------------->
+	
+        <nav>
+            <ul>
+                <li class="navbar" >
+                    <a href="http://www.westerdals.no/"> Westerdals Oslo ACT</a></li>
+            </ul>
+        </nav>
+    
+    
+    <!-- Navigeringsmeny End ----------------------------->
+    <!---------------------------------------------------->
+    <!-- About Start ------------------------------------->
+        <div id="about">
+            <img class="icon" src="../bilder/Person_Icon.svg" alt="icon">
+            <a href="#">Aslak Austenå Løvdal</a>
+        </div>
+    <!-- About End --------------------------------------->     <!---------------------------------------------------->
+    </header>
+    <!-- Header End -------------------------------------->
+    <!---------------------------------------------------->
+    <!-- Finder Start ------------------------------------>
+    <div id="finder">
+    <!---------------------------------------------------->
+    <!-- Search Menu Start ------------------------------->
+	
+        <div id="search_menu">
+            <menu>
+                <dl>
+                    <li>
+                        <p>Dato</p> 
+                        <select id="date_select">
+                        <option value="2015-03-17">17.Mars</option>
+                        <option value="2015-03-18">18.Mars</option>
+                        <option value="2015-03-19">19.Mars</option>
+                        <option value="2015-03-20">20.Mars</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="checkbox">Prosjektor</label>
+                        <form>
+                            <input type="checkbox" id="checkbox" name="prosjektor" value="prosjektor" checked>
+                        </form>
+                    </li>
+                    <li><p>Antall personer</p>
+                        <select class="person_select">
+                          <option value="2pers">2</option>
+                          <option value="3pers">3</option>
+                          <option value="4pers">4</option>
+                        </select>
+                    </li>
+                </dl>
+                <button class="search_button">Søk</button>
+            </menu>
+        </div>
+    
+    <!-- Search Menu End --------------------------------->
+    <!---------------------------------------------------->
+    <!-- Room Grid Start --------------------------------->
+	
+        <div id="shedule_list">
+            <table class="kalender">
+                <tr>
+                    <th class="table_head">Rom</th>
+                    <th class="table_head">Dato</th>
+                    <th class="table_head">Tilkobling</th>
+                    <th class="table_head">Plasser</th>
+                    <th class="table_head"></th>
+                </tr>
+                <tr>   
+                    <td class="table_content">Rom 81</td>
+                    <td class="table_content">17.Mars</td>
+                    <td class="table_content">HDMI/VGA</td>
+                    <td class="table_content">4</td>
+                    <td><button class="reserve_room">Reserver
+            </button></td>
+                </tr>
+                <tr>   
+                    <td class="table_content">Rom 81</td>
+                    <td class="table_content">17.Mars</td>
+                    <td class="table_content">HDMI/VGA</td>
+                    <td class="table_content">4</td>
+                    <td><button class="reserve_room">Reserver
+            </button></td>
+                </tr>
+                <tr>   
+                    <td class="table_content">Rom 81</td>
+                    <td class="table_content">17.Mars</td>
+                    <td class="table_content">HDMI/VGA</td>
+                    <td class="table_content">4</td>
+                    <td><button class="reserve_room">Reserver
+            </button></td>
+                </tr>
+                <tr>   
+                    <td class="table_content">Rom 81</td>
+                    <td class="table_content">17.Mars</td>
+                    <td class="table_content">HDMI/VGA</td>
+                    <td class="table_content">4</td>
+                    <td><button class="reserve_room">Reserver
+            </button></td>
+                </tr>
+            </table>
+            
+        </div>
+    <!-- Room Grid End ----------------------------------->
+    <!---------------------------------------------------->
+    </div>
+    <!-- Finder End -------------------------------------->
+    <!---------------------------------------------------->
+    <!-- Your Reservations Start ------------------------->
+    <div id="reservation_list">
+        <table>
+                <tr>
+                    <th class="table_head">Dato</th>
+                    <th class="table_head">Romnavn</th>
+                    <th class="table_head"></th>
+                    <th class="table_head"></th>
+                    <th class="table_head"></th>
+                    <th class="table_head"></th>
+                    <th class="table_head"></th>
+                    <th class="table_head"></th>
+                </tr>
+                <tr>
+                    <td class="table_content">19.Mars</td>
+                    <td class="table_content">Rom 81</td>
+                    <td><button class="reserve_room">Endre</button></td>
+                </tr>
+        </table>
+    </div>
+    <!-- Your Reservations End --------------------------->
+    <!---------------------------------------------------->
+    <!-- Footer start ------------------------------------>
+    
+	<footer>
+		
+	</footer>
+        
+    <!-- Footer End -------------------------------------->
+    <!---------------------------------------------------->
+</div>
+<!-- Wrapper End -----------------------------------------> <!-------------------------------------------------------->
+</body>
+<!-- Body End -------------------------------------------->
+<!-------------------------------------------------------->
+</html>
+<!-- Document End ---------------------------------------->
+<!-------------------------------------------------------->

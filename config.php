@@ -10,8 +10,11 @@ $user = 'eftoli14';
 $password = 'eftoli14';
 $db = 'eftoli14';
 $host = 'mysql.nith.no';
+<<<<<<< HEAD
 $port = '3306';
 
+=======
+>>>>>>> origin/master
 
 $link = mysqli_init();
 $connection = mysqli_real_connect(
@@ -19,8 +22,7 @@ $connection = mysqli_real_connect(
    $host, 
    $user, 
    $password, 
-   $db,
-   $port
+   $db
 );
 
 /* page rendering config */

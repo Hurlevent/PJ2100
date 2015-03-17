@@ -1,0 +1,307 @@
+/*-------------------------------------------*/
+/*---------- CSS Start ----------------------*/
+/*-------------------------------------------*/
+/*      Eksamensoppgave PJ2100 Gruppe 17     *
+ *                                           *
+ *      Aslak Austenå Løvdal                 *
+ *      Frode Bang                           *
+ *      Oliver Eftevaag                      *
+ *      Lars Dalan                           *
+ *      Lars Hallaraaker                     *
+ *      Andreas Ødegaard                     *
+ *      Christopher Komatovic                *
+ *                                           */
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+
+
+@charset "UTF-8";
+
+body {
+    margin: 0;
+
+	}
+#wrapper {
+    width: 1080px;
+    height: 100%;
+    margin:auto;
+    position: relative;
+	}
+/*-------------------------------------------*/
+/*---------- Header Start -------------------*/
+/*-------------------------------------------*/
+
+/* Main */ 
+
+header {
+    width: 1080px;
+    height: 200px;
+    margin-bottom: 5px;
+}
+/*-------------------------------------------*/
+/* Logo*/
+
+logo{
+    position: relative;
+    float: left;
+    display: inline-block;
+    height: 200px;
+    width: 400px;
+    left:-100px;
+}
+logo img{
+    width: 100%;
+    
+}
+/*-------------------------------------------*/
+/* Navigation */ 
+
+nav {
+    width:340px;
+    height: 100%;
+    float: left;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: sans-serif;
+	}
+
+nav ul {
+    padding: 0;
+    margin-top: 114px;
+    float: left;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(00,00,00)
+}
+
+nav a:hover{ 
+    border-bottom:1px solid #000; 
+}
+
+.navbar {
+	list-style: none;
+	margin: 20px;;
+	display: inline;
+	}
+/*-------------------------------------------*/
+/* My Page */ 
+
+#about{
+    position: relative;
+    width: 340px;
+    float: right;
+}
+
+#about a {
+    text-align: center;
+    padding:5px;
+    font-size: 1.2em;
+    font-family: sans-serif;
+    display: block;
+    margin: 0;
+    margin-top: 109px;
+    margin-right: 45px;
+    margin-left:85px;
+    width: auto;
+}
+
+#about a:hover{
+    color: rgb(255,112,97);
+}
+
+.icon {
+    margin-top: 100px;
+    margin-left: 45px;
+    float: left;
+    width: 40px;;
+    height: auto;
+    display: block;
+}
+
+/*-------------------------------------------*/
+/*---------- Header Slutt -------------------*/
+/*-------------------------------------------*/
+/*---------- Søk og Kalender Start ----------*/
+/*-------------------------------------------*/
+#finder{
+    width: 1080px;
+    min-height: 300px;
+    position: relative;
+}
+
+/*-------------------------------------------*/
+/* Search Menu */ 
+
+#search_menu{
+    width: 400px;
+    float: left;
+    position: relative;
+}
+
+menu {
+    width: 250px;
+	float: left;
+}
+menu dl {
+	list-style: none;
+}
+
+menu li{
+    width: 300px;
+    height: 30px;
+    position: relative;
+}
+
+menu select{
+    display:inline-block;
+    float: left;
+    position: relative;
+}
+
+menu p{
+    margin: 0;
+    width:120px;
+    font-size: 1.0em;
+    float: left;
+    font-family: sans-serif;
+    display: inline-block;
+}
+
+menu label{
+    width:120px;
+    font-size: 1.0em;
+    float: left;
+    font-family: sans-serif;
+    display: inline-block;
+}
+
+#date_select{
+
+}
+
+#person_select{
+
+}
+
+.search_button{
+    width:200px;
+    height: 30px;
+    margin-left: 0;
+    margin-right: 0;
+    font-family: sans-serif;
+    font-size: 0.9em;
+    background-color: #000;
+    border-color: #000;
+    color: #FFF
+    
+}
+
+/*-------------------------------------------*/
+/* Calendar Overview */ 
+
+#shedule_list{
+   width: 680px;
+    height: auto;
+    float: left;
+    position: relative;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    
+}
+
+table {
+	float: left;
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0;
+    
+}
+
+tr{
+    width: auto;
+}
+
+th, td{
+    width:100px;
+    height: 30px;
+    padding-left: 15px;
+    margin: 0;
+}
+
+th{
+    height: 40px;
+}
+
+.table_head{
+    font-family: sans-serif;
+    font-size: 0.9em;
+    background-color: #000;
+    color: #FFF;
+}
+
+.table_content{
+    font-family: sans-serif;
+    font-size: 0.8em;
+    
+}
+
+tr:nth-child(even) {
+    background-color: #eee;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+}
+    
+.reserve_room{
+    width: 90px;
+    margin: 0;
+    height: 22px;
+    border-radius:10px;
+    background-color: #FF7061;
+    border-color: #FF7061;
+    border-style: solid;
+    color: white;
+}
+
+.reserve_room:hover{
+    border-color: #E66557;
+    background-color: #E66557;
+   
+}
+
+/*-------------------------------------------*/
+/* Assets */ 
+
+button {
+	}
+
+/*-------------------------------------------*/
+/*---------- Søk og Kalender Slutt ----------*/
+/*-------------------------------------------*/
+/*---------- Your Reservations Start --------*/
+/*-------------------------------------------*/
+
+#reservation_list{
+    padding-left:40px;
+}
+
+/*-------------------------------------------*/
+/*---------- Your Reservations End ----------*/
+/*-------------------------------------------*/
+/*---------- Footer Start -------------------*/
+/*-------------------------------------------*/
+footer {
+	bottom: 0;
+	width: 1080px;
+	margin: auto;
+	text-align: center;
+	}
+/*-------------------------------------------*/
+/*---------- Footer Slutt -------------------*/
+/*-------------------------------------------*/
+

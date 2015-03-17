@@ -44,12 +44,24 @@
 </div>
 
 <h1>Rombooking</h1>
-<p>Du har <?=$this->e($bookings_count)?> booking</p>
+<p>Det er <?=$this->e($room_count)?> ledige rom i dag</p>
+<ul>
+  <?php foreach($rooms as $item): ?>
+    <li><p><?php echo $item['id'] . ' ' . $item['name']; ?></p></li>
+  <?php endforeach; ?>
+</ul>
+<br>
+<h1>Alle rom:</h1>
+<ul>
+  <?php foreach($all_rooms as $item): ?>
+    <li><p><?php echo $item['id'] . ' ' . $item['name']; ?></p></li>
+  <?php endforeach; ?>
+</ul>
+
+<h1>Alle bookinger:</h1>
 <ul>
   <?php foreach($bookings as $item): ?>
-    <li><p><?php echo $bookings['name']; ?></p></li>
-    <li><?php echo date('d/m', strtotime(str_replace('-','/', $bookings['booked_from']))); ?></li>
-    <li><?php echo date('H:i', strtotime(str_replace('-','/', $bookings['booked_from']))); ?></li>
-    <li><?php echo date('H:i', strtotime(str_replace('-','/', $bookings['booked_to']))); ?></li>
+    <li><p>Room id: <?php echo $item['room_id']; ?></p></li>
+    <?php echo date('d/m', strtotime(str_replace('-','/', $item['booked_from']))); ?></li>
   <?php endforeach; ?>
 </ul>

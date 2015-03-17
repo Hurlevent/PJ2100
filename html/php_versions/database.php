@@ -64,7 +64,7 @@ class DB
     }
 
     public function showAvailable($date){
-        $sql = "SELECT DISTINCT room.id AS rid, room.name, room.capacity, room.projector FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE room.id NOT IN( SELECT room.id FROM room JOIN booking ON room.id = booking.room_id WHERE DATE_FORMAT(" . $date . ", '%Y-%m-%d') = DATE_FORMAT(booking.booked_from, '%Y-%m-%d'));";
+        $sql = "SELECT DISTINCT room.id AS rid, room.name, room.capacity, room.projector FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE room.id NOT IN( SELECT room.id FROM room JOIN booking ON room.id = booking.room_id WHERE DATE_FORMAT('" . $date . "', '%Y-%m-%d') = DATE_FORMAT(booking.booked_from, '%Y-%m-%d'));";
 
         $result = $this->connection->query($sql);
         echo "<tr><td>Room ID</td><td>Room name</td><td>Capacity</td><td>Prosjektor</td></tr>";

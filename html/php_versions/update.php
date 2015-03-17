@@ -1,8 +1,8 @@
 <?php
 require("database.php");
-require("selectedDate.php");
 $database = new DB();
-$selectedDate = new SelectedDate();
+
+session_start();
 
 $date = new DateTime();
 $timestamp = $date->getTimestamp();
@@ -21,7 +21,9 @@ if(!isset($_POST["dato"])){
 } else {
     $dato = $_POST["dato"];
 }
-$selectedDate->setNewDate($dato);
+$_SESSION["Date"] = $dato;
+
+
 
 if(!isset($_POST["tidspunkt"])){
     $tidspunkt = $currentTime;
@@ -45,6 +47,7 @@ if(!isset($_POST["personer"])){
 } else {
     $personer = $_POST["personer"];
 }
-header("Location: desktop_home.php");
+
+    header("Location: desktop_home.php");
 
 ?>

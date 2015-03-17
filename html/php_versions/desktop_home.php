@@ -1,8 +1,6 @@
 <?php
 require("database.php");
-require("selectedDate.php");
 $database = new DB();
-$selectedDate = new SelectedDate();
 session_start(); // session objekt
 if(!isset($_SESSION["Username"])){
     $_SESSION["Username"] = null;
@@ -10,6 +8,13 @@ if(!isset($_SESSION["Username"])){
 if(!isset($_SESSION["Password"])){
     $_SESSION["Password"] = null;
 }
+
+if(!isset($_SESSION["Date"])){
+    $date = new DateTime();
+    $timestamp = $date->getTimestamp();
+    $_SESSION["Date"] = date('Y/m/d', $timestamp);
+}
+$date = $_SESSION["Date"];
 $username = $_SESSION["Username"];
 $password = $_SESSION["Password"];
 ?>
@@ -67,8 +72,7 @@ $password = $_SESSION["Password"];
 	</nav>
 <div>
     <?php
-    $selectedDate = $selectedDate->getSelectedDate();
-    echo "Valgt dato: " . $selectedDate . ".";
+    echo "Valgt dato: " . $date . ".";
     ?>
     <form action='update.php' method='POST'>
         <p>Velg en annen dato</p>
@@ -87,7 +91,7 @@ $password = $_SESSION["Password"];
 	<table class="kalender">
         <?php
 
-       $database->showAvailable($selectedDate);
+       $database->showAvailable($date);
         ?>
 	</table>
 	<!-- <img class="kalender" src="../bilder/kalender.jpg" alt="kalender" /> -->

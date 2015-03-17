@@ -5,6 +5,7 @@ require 'config.php';
 $all_rooms_query = 'SELECT * FROM room';
 $bookings_query = 'SELECT * FROM booking';
 $bookings_room_query = 'SELECT * FROM booking INNER JOIN room ON booking.room_id = room.id';
+//$free_rooms = 'SELECT room.id, name, projector, capacity FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE booking.booked_from NOT BETWEEN "2015-03-17" AND "2015-03-18" OR booking.booked_from IS NULL';
 $free_rooms = 'SELECT room.id, name, projector, capacity FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE booking.booked_from NOT BETWEEN CURRENT_DATE() AND CURRENT_DATE() + INTERVAL 1 DAY OR booking.booked_from IS NULL';
 
 if ($result = mysqli_query($link, $free_rooms)) {

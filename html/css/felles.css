@@ -124,50 +124,138 @@ a:hover{
 /*-------------------------------------------*/
 #finder{
     width: 1080px;
-    height: 500px;
+    min-height: 300px;
     position: relative;
 }
+
+/*-------------------------------------------*/
+/* Search Menu */ 
 
 #search_menu{
     width: 400px;
     float: left;
     position: relative;
 }
-#shedule_list{
-   width: 680px; 
+
+menu {
+    width: 250px;
+	float: left;
+}
+menu dl {
+	list-style: none;
+}
+
+menu li{
+    width: 300px;
+    height: 30px;
+    position: relative;
+}
+
+menu select{
+    display:inline-block;
     float: left;
     position: relative;
 }
 
+menu p{
+    margin: 0;
+    width:120px;
+    font-size: 1.0em;
+    float: left;
+    font-family: sans-serif;
+    display: inline-block;
+}
+
+menu label{
+    width:120px;
+    font-size: 1.0em;
+    float: left;
+    font-family: sans-serif;
+    display: inline-block;
+}
+
+#date_select{
+
+}
+
+#person_select{
+
+}
+
+.search_button{
+    width:200px;
+    height: 30px;
+    margin-left: 0;
+    margin-right: 0;
+    font-family: sans-serif;
+    font-size: 0.9em;
+    
+}
+
+/*-------------------------------------------*/
+/* Calendar Overview */ 
+
+#shedule_list{
+   width: 680px;
+    height: auto;
+    float: left;
+    position: relative;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    
+}
+
 .kalender {
-	width: 70%;
-	float: right;
-	margin-right: 5%;
-	border: 1px solid black;
-	}
-	
-menu {
 	float: left;
-	
-	}
-dl {
-	list-style: none;
-	}
-	
-button {
-	margin: 1%;
-	float: bottom;
-	background-color: gray;
-	}
-	
-#idag {
-	color: white;
-	background-color: black;
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0;
+    
 	}
 
-table, th, td {
-	border: 1px solid black;
+.kalender tr{
+    width: auto;
+    border-bottom: 1px solid black;
+}
+
+.kalender th, td{
+    width:100px;
+    height: 30px;
+    padding: 5px;
+    margin: 0;
+}
+
+.kalender th{
+    height: 39px;
+}
+
+.table_head{
+    font-family: sans-serif;
+    font-size: 0.9em;
+    background-color: rgb(00,00,00);
+    color: white;
+}
+
+.table_content{
+    font-family: sans-serif;
+    font-size: 0.8em;
+    
+}
+    
+.reserve_room{
+    width: 100px;
+    margin: 0;
+    height: 25px;
+}
+	
+/*-------------------------------------------*/
+/* Assets */ 
+
+button {
 	}
+
 /*-------------------------------------------*/
 /*---------- Søk og Kalender Slutt ----------*/
 /*-------------------------------------------*/

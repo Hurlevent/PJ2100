@@ -56,33 +56,28 @@
         <div id="search_menu">
             <menu>
                 <dl>
-                    <li>Start 
-                        <select>
-                          <option value="8">08:00</option>
-                          <option value="9">09:00</option>
+                    <li><p>Dato</p> 
+                        <select id="date_select">
+                        <option value="2015-03-17">17.Mars</option>
+                        <option value="2015-03-18">18.Mars</option>
+                        <option value="2015-03-19">19.Mars</option>
+                        <option value="2015-03-20">20.Mars</option>
                         </select>
                     </li>
-                    <li>Varighet
-                        <select>
-                          <option value="1t">1</option>
-                          <option value="2t">2</option>
-                        </select>
-                        timer
-                    </li>			
-                    <li>Prosjektor
+                    <li>
+                        <label for="checkbox">Prosjektor</label>
                         <form>
-                        <input type="checkbox" name="prosjektor" value="prosjektor" checked>
-                        Prosjektor
+                            <input type="checkbox" id="checkbox" name="prosjektor" value="prosjektor" checked>
                         </form>
                     </li>
-                    <li>Antall personer
-                        <select>
+                    <li><p>Antall personer</p>
+                        <select class="person_select">
                           <option value="2pers">2</option>
                           <option value="3pers">3</option>
                           <option value="4pers">4</option>
                         </select>
                     </li>
-
+                    <button class="search_button">Søk</button>
                 </dl>
             </menu>
         </div>
@@ -94,28 +89,46 @@
         <div id="shedule_list">
             <table class="kalender">
                 <tr>
-                    <th>Rom</th>
-                    <th>07:00</th>
-                    <th>08:00</th>
-                    <th>09:00</th>
-                    <th>10:00</th>
-                    <th>11:00</th>
-                    <th>12:00</th>
-                    <th>13:00</th>
+                    <th class="table_head">Rom</th>
+                    <th class="table_head">Dato</th>
+                    <th class="table_head">Tilkobling</th>
+                    <th class="table_head">Plasser</th>
+                    <th class="table_head"></th>
                 </tr>
-                <tr>
-                  <td>Rom 81</td>
-                  <td>Ledig</td>
-                  <td>Ledig</td>
-                  <td>Opptatt</td>
-                  <td>Ledig</td>
-                  <td>Opptatt</td>
-                  <td>Opptatt</td>
-                  <td>Opptatt</td>
+                <tr>   
+                    <td class="table_content">Rom 81</td>
+                    <td class="table_content">17.Mars</td>
+                    <td class="table_content">HDMI/VGA</td>
+                    <td class="table_content">4</td>
+                    <td><button class="reserve_room">Reserver
+            </button></td>
+                </tr>
+                <tr>   
+                    <td class="table_content">Rom 81</td>
+                    <td class="table_content">17.Mars</td>
+                    <td class="table_content">HDMI/VGA</td>
+                    <td class="table_content">4</td>
+                    <td><button class="reserve_room">Reserver
+            </button></td>
+                </tr>
+                <tr>   
+                    <td class="table_content">Rom 81</td>
+                    <td class="table_content">17.Mars</td>
+                    <td class="table_content">HDMI/VGA</td>
+                    <td class="table_content">4</td>
+                    <td><button class="reserve_room">Reserver
+            </button></td>
+                </tr>
+                <tr>   
+                    <td class="table_content">Rom 81</td>
+                    <td class="table_content">17.Mars</td>
+                    <td class="table_content">HDMI/VGA</td>
+                    <td class="table_content">4</td>
+                    <td><button class="reserve_room">Reserver
+            </button></td>
                 </tr>
             </table>
-            <button type="knapp">Registrer tid
-            </button>
+            
         </div>
     <!-- Room Grid End ----------------------------------->
     <!---------------------------------------------------->

@@ -11,57 +11,105 @@ USE eftoli14;
 -- Structure for table 'Grupperom'
 --
 
-DROP TABLE IF EXISTS Grupperom;
-CREATE TABLE Grupperom
-(
-RomID int(30) NOT NULL UNIQUE AUTO_INCREMENT,
-RomNavn VARCHAR(10),
-harProsjektor boolean DEFAULT'1',
-kvadratMeter int(10),
-kapasitet INT DEFAULT'1',
-PRIMARY KEY (RomID)
-);
- 
+-- phpMyAdmin SQL Dump
+-- version 3.4.1
+-- http://www.phpmyadmin.net
 --
--- Structure for table 'Brukere'
---
+-- Host: mysql.nith.no
+-- Generation Time: Mar 17, 2015 at 02:05 PM
+-- Server version: 5.1.73
+-- PHP Version: 5.4.4-14+deb7u14
 
-DROP TABLE IF EXISTS Brukere;
-CREATE TABLE Brukere 
-(
-BrukerID int(30) NOT NULL UNIQUE AUTO_INCREMENT,
-Navn VARCHAR(50) NOT NULL,
-Passord VARCHAR(50),
-Studie ENUM('Kunst','Kommunikasjon','Teknologi'),
-PRIMARY KEY (BrukerID)
-);
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Table for connecting 'Grupperom' AND 'Brukere'
+-- Database: `eftoli14`
 --
 
-DROP TABLE IF EXISTS Booking;
-CREATE TABLE Booking
-(
-ReservationID int(30) NOT NULL UNIQUE AUTO_INCREMENT,
-BrukerID int(30) NOT NULL,
-FromDate DATE NOT NULL,
-ToDate DATE NOT NULL,
-RomID int(30) NOT NULL,
-PRIMARY KEY (ReservationID),
-FOREIGN KEY (BrukerID) REFERENCES Brukere (BrukerID),
-FOREIGN KEY (RomID) REFERENCES Grupperom (RomID) 
-);
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `booking`
+--
 
-INSERT INTO Grupperom VALUES (NULL, 'Vrimle', false, 10, 3);
-INSERT INTO Grupperom VALUES (NULL, 'Rom 81', true, 15, 4);
-INSERT INTO Grupperom VALUES (NULL, 'Rom 41', false, 12, 2);
+CREATE TABLE IF NOT EXISTS `booking` (
+  `id` int(12) unsigned NOT NULL AUTO_INCREMENT,
+  `booked_from` datetime DEFAULT NULL,
+  `booked_to` datetime DEFAULT NULL,
+  `room_id` int(6) unsigned DEFAULT NULL,
+  `user_id` int(6) unsigned DEFAULT NULL,
+  `added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `room_id` (`room_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=39 ;
 
-INSERT INTO Brukere VALUES (NULL, 'Oliver', 'hei', 'Teknologi');
-INSERT INTO Brukere VALUES (NULL, 'Magnus', 'ja', 'Kommunikasjon');
-INSERT INTO Brukere VALUES (NULL, 'Aslak', 'nei', 'Teknologi');
-INSERT INTO Brukere VALUES (NULL, 'Frode', 'kanskje', 'Teknologi');
-INSERT INTO Brukere VALUES (NULL, 'Lars', 'nesten', 'Teknologi');
-INSERT INTO Brukere VALUES (NULL, 'Andreas', 'litt', 'Teknologi');
-INSERT INTO Brukere VALUES (NULL, 'Christoffer', 'ferdig', 'Teknologi');
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`id`, `booked_from`, `booked_to`, `room_id`, `user_id`, `added`) VALUES
+(38, '2015-03-18 00:00:00', '0000-00-00 00:00:00', 2, 701395, '2015-03-17 13:04:44'),
+(37, '2015-03-27 00:00:00', '2015-03-27 00:00:00', 2, 701395, '2015-03-17 13:03:15'),
+(36, '2015-03-17 00:00:00', '0000-00-00 00:00:00', 5, 701395, '2015-03-17 13:02:58'),
+(35, '2015-03-15 00:00:00', '0000-00-00 00:00:00', 1, 701395, '2015-03-17 13:02:58'),
+(34, '2015-03-15 00:00:00', '2015-03-16 00:00:00', 1, 701395, '2015-03-17 12:59:03'),
+(33, '2015-03-17 00:00:00', '2015-03-18 00:00:00', 1, 701395, '2015-03-17 12:57:52');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `room`
+--
+
+CREATE TABLE IF NOT EXISTS `room` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) NOT NULL,
+  `projector` enum('HDMI','VGA') DEFAULT NULL,
+  `capacity` int(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `room`
+--
+
+INSERT INTO `room` (`id`, `name`, `projector`, `capacity`) VALUES
+(1, 'Rom 81', 'HDMI', 2),
+(2, 'Rom 42', 'VGA', 3),
+(3, 'Rom 4', 'HDMI', 4),
+(4, 'Rom 10', 'VGA', 2),
+(5, 'Vrimle', 'HDMI', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `student_id` int(6) unsigned NOT NULL,
+  `name` varchar(150) NOT NULL,
+  `password` varchar(150) NOT NULL,
+  `phone_number` int(8) unsigned NOT NULL,
+  `email_address` varchar(150) NOT NULL,
+  PRIMARY KEY (`student_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`student_id`, `name`, `password`, `phone_number`, `email_address`) VALUES
+(701395, 'Frode B.', 'Frode', 46899973, 'frode@riseup.net');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

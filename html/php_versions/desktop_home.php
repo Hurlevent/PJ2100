@@ -1,6 +1,8 @@
 <?php
 require("database.php");
+require("selectedDate.php");
 $database = new DB();
+$selectedDate = new SelectedDate();
 session_start(); // session objekt
 if(!isset($_SESSION["Username"])){
     $_SESSION["Username"] = null;
@@ -59,8 +61,15 @@ $password = $_SESSION["Password"];
             }
             ?>
 		</ul>
+        <ul>
+            <li class="navbar"><a href="booknyttrom.php">Book et rom</a></li>
+        </ul>
 	</nav>
 <div>
+    <?php
+    $selectedDate = $selectedDate->getSelectedDate();
+    echo "Valgt dato: " . $selectedDate . ".";
+    ?>
     <form action='update.php' method='POST'>
         <p>Velg en annen dato</p>
         <input type='date' name='dato' />
@@ -76,26 +85,10 @@ $password = $_SESSION["Password"];
     </form>
 </div>
 	<table class="kalender">
-		<tr>
-			<th>Rom</th>
-			<th>07:00</th>
-			<th>08</th>
-			<th>09</th>
-			<th>10</th>
-			<th>11</th>
-			<th>12</th>
-			<th>13</th>
-		</tr>
-		<tr>
-		  <td>Rom 81</td>
-		  <td>Ledig</td>
-		  <td>Ledig</td>
-		  <td>Opptatt</td>
-		  <td>Ledig</td>
-		  <td>Opptatt</td>
-		  <td>Opptatt</td>
-		  <td>Opptatt</td>
-		</tr>
+        <?php
+
+       $database->showAvailable($selectedDate);
+        ?>
 	</table>
 	<!-- <img class="kalender" src="../bilder/kalender.jpg" alt="kalender" /> -->
 	<footer>

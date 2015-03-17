@@ -6,9 +6,12 @@ $user = $_SESSION["Username"];
 $room = $_POST["room"];
 $from = $_POST["from"];
 $to = $_POST["to"];
+$totime = $_POST["totime"];
+$fromtime = $_POST["fromtime"];
 
-$database->rentRoom($user, $room, $from, $to);
-
+$database->rentRoom($user, $room, $from, $fromtime, $to, $totime);
+header("Location: desktop_home.php");
+/*
 $sql = "SELECT BrukerID FROM Brukere WHERE Navn = '$user'";
 $result = $database->connection->query($sql);
 $id = $result->fetch_assoc();
@@ -19,3 +22,4 @@ echo "INSERT INTO Booking VALUES (NULL, " . $id['BrukerID'] . ", STR_TO_DATE('" 
 ?>
 <br />
 <a href="/~eftoli14/PJ2100/desktop_home.php">Tilbake til hovedsiden</a>
+*/

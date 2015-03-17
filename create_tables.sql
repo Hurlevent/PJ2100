@@ -1,3 +1,13 @@
+-- COPYRIGHT gruppe17( eftoli14, banfro14, hallar14, dallar14, ausasl14, komchr14, odeand14)
+-- Database for PJ2100 exam-project
+--
+-- Creating the Schema
+--
+DROP SCHEMA IF EXISTS eftoli14;
+CREATE SCHEMA eftoli14;
+USE eftoli14;
+
+DROP TABLE IF EXISTS room;
 CREATE TABLE room (
   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(30) NOT NULL,
@@ -5,13 +15,16 @@ CREATE TABLE room (
   capacity INT(1) NOT NULL
 );
 
+DROP TABLE IF EXISTS user;
 CREATE TABLE user (
   student_id INT(6) UNSIGNED PRIMARY KEY,
   name VARCHAR(150) NOT NULL,
+  password VARCHAR(150) NOT NULL,
   phone_number INT(8) UNSIGNED NOT NULL,
   email_address VARCHAR(150) NOT NULL
 );
 
+DROP TABLE IF EXISTS booking;
 CREATE TABLE booking (
   id INT(12) UNSIGNED AUTO_INCREMENT,
   booked_from DATETIME,
@@ -31,7 +44,7 @@ INSERT INTO room VALUES
 (NULL, 'Rom 10', 2, 2);
 
 INSERT INTO user VALUES
-(701395, 'Frode B.', 46899973, 'frode@riseup.net');
+(701395, 'Frode B.', 'Frode', 46899973, 'frode@riseup.net');
 
 INSERT INTO booking VALUES
 (NULL, '2015-03-16 12:00:00', '2015-03-16 14:00:00', 5, 701395, NULL),

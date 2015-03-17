@@ -17,7 +17,7 @@ class DB
     public function logIn($user, $pass)
     {
 
-        $sql = "SELECT Navn, Passord FROM Brukere WHERE Navn = '$user' AND Passord = '$pass'";
+        $sql = "SELECT name FROM user WHERE name = '$user' AND password = '$pass'";
         $result = $this->connection->query($sql);
         if (mysqli_num_rows($result)) {
             $_SESSION["Username"] = $user;
@@ -40,7 +40,7 @@ class DB
     // this funtion is for testing only
     public function test($user)
     {
-        $sql = "SELECT * FROM Brukere WHERE Navn = '$user'";
+        $sql = "SELECT * FROM user WHERE name = '$user'";
         $result = $this->connection->query($sql);
         return $result;
     }
@@ -55,22 +55,36 @@ class DB
 
     public function showRooms()
     {
-        $sql = "SELECT * FROM Grupperom";
+        $sql = "SELECT * FROM room";
         $result = $this->connection->query($sql);
         for($i = 0; $i < mysqli_num_rows($result); $i++){
             $currentrow = $result->fetch_assoc();
-            array_push($this->allRooms, $currentrow['RomNavn']);
+            array_push($this->allRooms, $currentrow['name']);
         }
     }
 
-    public function rentRoom($user, $room, $from, $to){
-        $sql = "SELECT BrukerID FROM Brukere WHERE Navn = '$user'";
+    public function showAvailable($date){
+        $sql = "SELECT DISTINCT room.id AS rid, room.name, room.capacity, room.projector FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE room.id NOT IN( SELECT room.id FROM room JOIN booking ON room.id = booking.room_id WHERE DATE_FORMAT(" . $date . ", '%Y-%m-%d') = DATE_FORMAT(booking.booked_from, '%Y-%m-%d'));";
+
+        $result = $this->connection->query($sql);
+        echo "<tr><td>Room ID</td><td>Room name</td><td>Capacity</td><td>Prosjektor</td></tr>";
+        for($i = 0; $i < mysqli_num_rows($result); $i++) {
+            $row = $result->fetch_assoc();
+            echo "<tr>";
+            echo "<td>" . $row["rid"] . "</td><td>" . $row["name"] . "</td><td>" . $row["capacity"] . "</td><td>" . $row["projector"] . "</td>";
+            echo "</tr>";
+        }
+    }
+
+    public function rentRoom($user, $room, $from, $fromtime, $to, $totime){
+        $sql = "SELECT student_id FROM user WHERE name = '$user'";
         $result = $this->connection->query($sql);
         $id = $result->fetch_assoc();
-        $sql = "SELECT RomID FROM Grupperom WHERE RomNavn = '$room'";
+        $sql = "SELECT id FROM room WHERE name = '$room'";
         $result = $this->connection->query($sql);
         $roomID = $result->fetch_assoc();
-        $sql = "INSERT INTO Booking VALUES (NULL, " . $id['BrukerID'] . ", STR_TO_DATE('" . $from . "', '%Y-%m-%d'), STR_TO_DATE('" . $to . "', '%Y-%m-%d'), " . $roomID['RomID'] . ");";
+        //$sql = "INSERT INTO booking VALUES (NULL, STR_TO_DATE('" . $from . " " . $fromtime . "', '%Y-%m-%d %h:%i:%s'), STR_TO_DATE('" . $to . " " . $totime . "', '%Y-%m-%d %h:%i:%s'), " . $roomID['id'] .  ", " . $id['student_id'] . ", NULL);";
+        $sql = "INSERT INTO booking VALUES (NULL, STR_TO_DATE('" . $from . "', '%Y-%m-%d'), STR_TO_DATE('" . $to . "', '%Y-%m-%d'), " . $roomID['id'] .  ", " . $id['student_id'] . ", NULL);";
         $this->connection->query($sql);
     }
 }

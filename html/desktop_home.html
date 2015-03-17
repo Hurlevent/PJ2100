@@ -31,8 +31,6 @@
             <ul>
                 <li class="navbar" >
                     <a href="http://www.westerdals.no/"> Westerdals Oslo ACT</a></li>
-                <li class="navbar">
-                    <a href="#">Booking</a></li>
             </ul>
         </nav>
     
@@ -41,7 +39,7 @@
     <!---------------------------------------------------->
     <!-- About Start ------------------------------------->
         <div id="about">
-            <img class="icon" src="../bilder/Person%20Icon.svg" alt="icon">
+            <img class="icon" src="../bilder/Person_Icon.svg" alt="icon">
             <a href="#">Aslak Austenå Løvdal</a>
         </div>
     <!-- About End --------------------------------------->     <!---------------------------------------------------->
@@ -56,7 +54,8 @@
         <div id="search_menu">
             <menu>
                 <dl>
-                    <li><p>Dato</p> 
+                    <li>
+                        <p>Dato</p> 
                         <select id="date_select">
                         <option value="2015-03-17">17.Mars</option>
                         <option value="2015-03-18">18.Mars</option>
@@ -77,8 +76,8 @@
                           <option value="4pers">4</option>
                         </select>
                     </li>
-                    <button class="search_button">Søk</button>
                 </dl>
+                <button class="search_button">Søk</button>
             </menu>
         </div>
     
@@ -135,25 +134,32 @@
     </div>
     <!-- Finder End -------------------------------------->
     <!---------------------------------------------------->
+    <!-- Your Reservations Start ------------------------->
+    <div id="reservation_list">
+        <table>
+                <tr>
+                    <th class="table_head">Dato</th>
+                    <th class="table_head">Romnavn</th>
+                    <th class="table_head"></th>
+                    <th class="table_head"></th>
+                    <th class="table_head"></th>
+                    <th class="table_head"></th>
+                    <th class="table_head"></th>
+                    <th class="table_head"></th>
+                </tr>
+                <tr>
+                    <td class="table_content">19.Mars</td>
+                    <td class="table_content">Rom 81</td>
+                    <td><button class="reserve_room">Endre</button></td>
+                </tr>
+        </table>
+    </div>
+    <!-- Your Reservations End --------------------------->
+    <!---------------------------------------------------->
     <!-- Footer start ------------------------------------>
     
 	<footer>
-		<p>Mine møter:</p>
-		<table>
-			<tr>
-				<th>Dato</th>
-				<th>Romnavn</th>
-				<th>Starttid</th>
-				<th>Sluttid</th>
-			</tr>
-			<tr>
-				<td>"Første booking"</td>
-				<td>Rom 81</td>
-				<td>10.15</td>
-				<td>16.00</td>
-				<td><button>Endre</button></td>
-			</tr>
-		<button>Ny booking</button>
+		
 	</footer>
         
     <!-- Footer End -------------------------------------->

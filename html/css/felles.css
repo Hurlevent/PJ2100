@@ -92,7 +92,6 @@ nav a:hover{
     position: relative;
     width: 340px;
     float: right;
-    right: -100px;
 }
 
 #about a {
@@ -214,34 +213,34 @@ menu label{
     
 }
 
-.kalender {
+table {
 	float: left;
     text-align: left;
     border-collapse: collapse;
     border-spacing: 0;
     
-	}
+}
 
-.kalender tr{
+tr{
     width: auto;
 }
 
-.kalender th, td{
+th, td{
     width:100px;
     height: 30px;
     padding-left: 15px;
     margin: 0;
 }
 
-.kalender th{
+th{
     height: 40px;
 }
 
 .table_head{
     font-family: sans-serif;
     font-size: 0.9em;
-    background-color: rgb(00,00,00);
-    color: white;
+    background-color: #000;
+    color: #FFF;
 }
 
 .table_content{
@@ -250,10 +249,11 @@ menu label{
     
 }
 
-.kalender tr:nth-child(even) {
+tr:nth-child(even) {
     background-color: #eee;
 }
-.kalender tr:nth-child(odd) {
+
+tr:nth-child(odd) {
     background-color: #fff;
 }
     
@@ -282,6 +282,16 @@ button {
 
 /*-------------------------------------------*/
 /*---------- Søk og Kalender Slutt ----------*/
+/*-------------------------------------------*/
+/*---------- Your Reservations Start --------*/
+/*-------------------------------------------*/
+
+#reservation_list{
+    padding-left:40px;
+}
+
+/*-------------------------------------------*/
+/*---------- Your Reservations End ----------*/
 /*-------------------------------------------*/
 /*---------- Footer Start -------------------*/
 /*-------------------------------------------*/

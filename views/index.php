@@ -4,7 +4,7 @@
     require_once('database.php');
  ?>
     <div id="finder">
-        <div id="search_menu">
+        <div id="search_menu" class="font_style_class">
             <menu>
                 <dl>
                     <li>
@@ -35,20 +35,23 @@
                 </form>
             </menu>
         </div>
-        <div id="shedule_list">
+        <div id="shedule_list" class="font_style_class">
             <table class="kalender">
               <tr>
-                <td class='table_head'>Room name</td>
-                <td class='table_head'>Capacity</td>
-                <td class='table_head'>Prosjektor</td>
-                <td class='table_head'>Handlinger</td>
+                <th class='table_head'>Room name</th>
+                <th class='table_head'>Plasser</th>
+                <th class='table_head'>Prosjektor</th>
+                <th class='table_head'>Handlinger</th>
               </tr>
-              <?php foreach($free_rooms as $item): ?>
+              <?php foreach($free_rooms as $item):
+                  $currentroom = $item['rname'];
+                  ?>
                 <tr>
-                  <td><?php echo $item['rname'] ?></td>
+                  <td><?php echo $currentroom ?></td>
                   <td><?php echo $item['capacity'] ?></td>
                   <td><?php echo $item['projector'] ?></td>
-                  <td><a class='reserve_room' href='#'>Reserver</a></td>
+                  <td><?php echo "<form action='hurtigbooking.php' method='POST'><input type='hidden' name='Room' value='" . $currentroom . "' />
+                      <input type='submit' value='Reserver' class='reserve_room' /></form>"; ?> </td>
                 </tr>
               <?php endforeach; ?>
             </table>

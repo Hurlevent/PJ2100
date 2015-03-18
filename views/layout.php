@@ -24,7 +24,7 @@
             <img class="icon" src="bilder/Person_Icon.svg" alt="icon">
             <?php
              if ($user){
-                    echo "<a href='/minside.php'>" . $user["full_name"] . "</a><button><a href='logout.php'>Log ut</a></button>";
+                    echo "<a href='/minside.php'>" . $user["full_name"] . "</a><a href='logout.php'><button>Log ut</button></a>";
                } else {
                    echo "<a href='logg-inn.php'>Trykk her for å logge inn</a>";
                }

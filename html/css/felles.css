@@ -36,8 +36,8 @@ body {
 
 header {
     width: 100%;
-    height: 200px;
-    margin-bottom: 5px;
+    min-height: 200px;
+    height: auto;
 }
 /*-------------------------------------------*/
 /* Logo*/
@@ -46,9 +46,7 @@ logo{
     position: relative;
     float: left;
     display: inline-block;
-    height: 200px;
-    width: 400px;
-    left:-100px;
+    max-width: 40%;
 }
 logo img{
     width: 100%;
@@ -58,16 +56,15 @@ logo img{
 /* Navigation */ 
 
 nav {
-    width:auto;
-    height: 100%;
+    width: 30%;
     float: left;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1em;
 	}
 
 nav ul {
     padding: 0;
-    margin-top: 114px;
+    margin-top: 38.5%;
     float: left;
 }
 
@@ -82,7 +79,7 @@ nav a:hover{
 
 .navbar {
 	list-style: none;
-	margin: 20px;;
+	margin: 20px;
 	display: inline;
 	}
 /*-------------------------------------------*/
@@ -90,17 +87,16 @@ nav a:hover{
 
 #about{
     position: relative;
-    width: auto;
+    width: 30%;
     float: right;
 }
 
 #about a {
     text-align: center;
-    padding:5px;
-    font-size: 1.2em;
+    font-size: 1vw;
     display: block;
     margin: 0;
-    margin-top: 109px;
+    margin-top: 38.5%;
     margin-right: 45px;
     margin-left:85px;
     width: auto;
@@ -114,7 +110,7 @@ nav a:hover{
     margin-top: 100px;
     margin-left: 45px;
     float: left;
-    width: 40px;;
+    width: 15%;
     height: auto;
     display: block;
 }
@@ -211,10 +207,6 @@ menu label{
     height: auto;
     float: left;
     position: relative;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
     
 }
 

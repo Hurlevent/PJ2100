@@ -10,7 +10,7 @@
     <header>
   
         <logo>
-            <img src="../bilder/Venstrejustert_svart_Oslo_ACT.svg" alt="logo"/>
+            <a href='/'><img src="../bilder/Venstrejustert_svart_Oslo_ACT.svg" alt="logo"/></a>
         </logo>
   
         <nav>

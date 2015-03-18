@@ -14,9 +14,14 @@ if(!isset($_SESSION["Date"])){
     $timestamp = $date->getTimestamp();
     $_SESSION["Date"] = date('Y/m/d', $timestamp);
 }
+if(!isset($_SESSION["Fullname"])){
+    $_SESSION["Fullname"] = "You are not logged in";
+}
+
 $date = $_SESSION["Date"];
 $username = $_SESSION["Username"];
 $password = $_SESSION["Password"];
+$fullname = $_SESSION["Fullname"];
 ?>
 
 <DOCTYPE html>
@@ -34,8 +39,8 @@ $password = $_SESSION["Password"];
         }
 
         ?>
-	<link type="html/css" rel="stylesheet" href="css/forside_css.css" />
-	<link type="html/css" rel="stylesheet" href="css/felles.css" />
+	<link type="html/css" rel="stylesheet" href="../css/forside_css.css" />
+	<link type="html/css" rel="stylesheet" href="../css/felles.css" />
 </head>
 
 <body>
@@ -50,7 +55,7 @@ $password = $_SESSION["Password"];
 
             <?php
             if($database->logIn($username, $password)){
-                echo "<li class='navbar'>Welcome back, " . $username . "</li>";
+                echo "<li class='navbar'>Welcome back, " . $fullname . "</li>";
                 echo "<form action='logOut.php' method='POST' class='navbar'/>
                 <input type='hidden' name='logOut' />
                 <input type='submit' value='Log out' />

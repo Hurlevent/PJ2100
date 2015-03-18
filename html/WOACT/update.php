@@ -48,6 +48,6 @@ if(!isset($_POST["personer"])){
     $personer = $_POST["personer"];
 }
 
-    //header("Location: desktop_home.php");
+   // header("Location: desktop_home.php");
 
 ?>

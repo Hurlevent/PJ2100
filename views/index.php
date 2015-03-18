@@ -10,6 +10,12 @@
                     <li>
                         <?php
                         echo "Dagens dato: " . $_SESSION["Date"];
+                        if(isset($_COOKIE["Prosjektor"]) && $_COOKIE["Prosjektor"] != "null"){
+                        echo "<br />Prosjektor: " . $_COOKIE["Prosjektor"];
+                        }
+                        if(isset($_COOKIE["Capacity"]) && $_COOKIE["Capacity"] != "null"){
+                        echo "<br />Antall personer: " . $_COOKIE["Capacity"];
+                        }
                         ?>
                     </li>
                     <li>
@@ -21,13 +27,18 @@
                     </li>
                     <li>
                             <label for="checkbox">Prosjektor</label>
-                            <input type="checkbox" id="checkbox" name="prosjektor" checked>
+                            <select class="person_select" name="prosjektor">
+                                <option value="null">All</option>
+                                <option value="HDMI">HDMI</option>
+                                <option value="VGA">VGA</option>
+                            </select>
                     </li>
                     <li><p>Antall personer</p>
                         <select class="person_select" name="capacity">
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
+                            <option value="null">All</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
                         </select>
                     </li>
                 </dl>

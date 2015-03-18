@@ -9,7 +9,18 @@ if(!isset($_SESSION["Date"])){
     $_SESSION["Date"] = $currentDate;
 }
 
-$free_rooms_query = "SELECT DISTINCT room.id AS rid, room.name AS rname, room.capacity AS capacity, room.projector AS projector FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE room.id NOT IN( SELECT room.id FROM room JOIN booking ON room.id = booking.room_id WHERE DATE_FORMAT('" . $_SESSION["Date"] . "', '%Y/%m/%d') = DATE_FORMAT(booking.booked_from, '%Y/%m/%d'));";
+if(isset($_COOKIE["Prosjektor"]) && $_COOKIE["Prosjektor"] != "null" || isset($_COOKIE["Capacity"]) && $_COOKIE["Capacity"] != "null"){
+    if(isset($_COOKIE["Prosjektor"]) && isset($_COOKIE["Capacity"]) && $_COOKIE["Capacity"] == "null"){
+        $free_rooms_query = "SELECT DISTINCT room.id AS rid, room.name AS rname, room.capacity AS capacity, room.projector AS projector FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE room.id NOT IN( SELECT room.id FROM room JOIN booking ON room.id = booking.room_id WHERE DATE_FORMAT('" . $_SESSION["Date"] . "', '%Y/%m/%d') = DATE_FORMAT(booking.booked_from, '%Y/%m/%d')) AND projector = '" . $_COOKIE["Prosjektor"] . "';";
+    } else if(isset($_COOKIE["Capacity"]) && isset($_COOKIE["Prosjektor"]) && $_COOKIE["Prosjektor"] == "null"){
+        $free_rooms_query = "SELECT DISTINCT room.id AS rid, room.name AS rname, room.capacity AS capacity, room.projector AS projector FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE room.id NOT IN( SELECT room.id FROM room JOIN booking ON room.id = booking.room_id WHERE DATE_FORMAT('" . $_SESSION["Date"] . "', '%Y/%m/%d') = DATE_FORMAT(booking.booked_from, '%Y/%m/%d')) AND capacity = '" . $_COOKIE["Capacity"] . "';";
+    } else {
+        $free_rooms_query = "SELECT DISTINCT room.id AS rid, room.name AS rname, room.capacity AS capacity, room.projector AS projector FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE room.id NOT IN( SELECT room.id FROM room JOIN booking ON room.id = booking.room_id WHERE DATE_FORMAT('" . $_SESSION["Date"] . "', '%Y/%m/%d') = DATE_FORMAT(booking.booked_from, '%Y/%m/%d')) AND projector = '" . $_COOKIE["Prosjektor"] . "' AND capacity = '" . $_COOKIE["Capacity"] . "';";
+    }
+
+} else {
+    $free_rooms_query = "SELECT DISTINCT room.id AS rid, room.name AS rname, room.capacity AS capacity, room.projector AS projector FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE room.id NOT IN( SELECT room.id FROM room JOIN booking ON room.id = booking.room_id WHERE DATE_FORMAT('" . $_SESSION["Date"] . "', '%Y/%m/%d') = DATE_FORMAT(booking.booked_from, '%Y/%m/%d'));";
+}
 
 if ($result = mysqli_query($link, $free_rooms_query)) {
   $free_rooms = array();

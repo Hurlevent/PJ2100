@@ -2,7 +2,6 @@
   'page_title' => 'Rombooking CK45',
   'user' => $user
 ]) ?>
-
     <div id="finder">
         <div id="search_menu">
             <menu>
@@ -36,12 +35,14 @@
                 <td class='table_head'>Room name</td>
                 <td class='table_head'>Capacity</td>
                 <td class='table_head'>Prosjektor</td>
+                <td class='table_head'>Handlinger</td>
               </tr>
               <?php foreach($free_rooms as $item): ?>
                 <tr>
                   <td><?php echo $item['rname'] ?></td>
                   <td><?php echo $item['capacity'] ?></td>
                   <td><?php echo $item['projector'] ?></td>
+                  <td><a class='reserve_room' href='#'>Reserver</a></td>
                 </tr>
               <?php endforeach; ?>
             </table>

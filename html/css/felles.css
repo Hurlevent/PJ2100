@@ -58,7 +58,7 @@ logo img{
 /* Navigation */ 
 
 nav {
-    width:340px;
+    width:auto;
     height: 100%;
     float: left;
     text-align: center;
@@ -90,7 +90,7 @@ nav a:hover{
 
 #about{
     position: relative;
-    width: 340px;
+    width: auto;
     float: right;
 }
 
@@ -318,14 +318,6 @@ tr:nth-child(odd) {
     border-collapse: collapse;
     border-spacing: 0;
     font-size: 0.9em;
-}
-
-#reservation_list table tr:nth-child(even) {
-    background-color: #eee;
-}
-
-#reservation_list table tr:nth-child(odd) {
-    background-color: #fff;
 }
 
 .reservation_list{

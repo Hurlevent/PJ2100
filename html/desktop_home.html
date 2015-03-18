@@ -27,7 +27,7 @@
     <!---------------------------------------------------->
     <!-- Navigation Menu --------------------------------->
 	
-        <nav>
+        <nav class="font_style_class">
             <ul>
                 <li class="navbar" >
                     <a href="http://www.westerdals.no/"> Westerdals Oslo ACT</a></li>
@@ -38,7 +38,7 @@
     <!-- Navigeringsmeny End ----------------------------->
     <!---------------------------------------------------->
     <!-- About Start ------------------------------------->
-        <div id="about">
+        <div id="about" class="font_style_class">
             <img class="icon" src="../bilder/Person_Icon.svg" alt="icon">
             <a href="#">Aslak Austenå Løvdal</a>
         </div>
@@ -51,17 +51,19 @@
     <!---------------------------------------------------->
     <!-- Search Menu Start ------------------------------->
 	
-        <div id="search_menu">
+        <div id="search_menu" class="font_style_class">
             <menu>
                 <dl>
                     <li>
                         <p>Dato</p> 
+                        <form>
                         <select id="date_select">
                         <option value="2015-03-17">17.Mars</option>
                         <option value="2015-03-18">18.Mars</option>
                         <option value="2015-03-19">19.Mars</option>
                         <option value="2015-03-20">20.Mars</option>
                         </select>
+                        </form>
                     </li>
                     <li>
                         <label for="checkbox">Prosjektor</label>
@@ -70,11 +72,13 @@
                         </form>
                     </li>
                     <li><p>Antall personer</p>
+                        <form>
                         <select class="person_select">
                           <option value="2pers">2</option>
                           <option value="3pers">3</option>
                           <option value="4pers">4</option>
                         </select>
+                        </form>
                     </li>
                 </dl>
                 <button class="search_button">Søk</button>
@@ -85,7 +89,7 @@
     <!---------------------------------------------------->
     <!-- Room Grid Start --------------------------------->
 	
-        <div id="shedule_list">
+        <div id="shedule_list" class="font_style_class">
             <table class="kalender">
                 <tr>
                     <th class="table_head">Rom</th>
@@ -95,33 +99,18 @@
                     <th class="table_head"></th>
                 </tr>
                 <tr>   
-                    <td class="table_content">Rom 81</td>
-                    <td class="table_content">17.Mars</td>
-                    <td class="table_content">HDMI/VGA</td>
-                    <td class="table_content">4</td>
-                    <td><button class="reserve_room">Reserver</button></td>
+                    <td class="table_content">"Room"</td>
+                    <td class="table_content">"Date"</td>
+                    <td class="table_content">"Connection"</td>
+                    <td class="table_content">"Capacity"</td>
+                    <td class="button"><button class="reserve_room">Reserver</button></td>
                 </tr>
                 <tr>   
-                    <td class="table_content">Rom 81</td>
-                    <td class="table_content">17.Mars</td>
-                    <td class="table_content">HDMI/VGA</td>
-                    <td class="table_content">4</td>
-                    <td><button class="reserve_room">Reserver</button></td>
-                </tr>
-                <tr>   
-                    <td class="table_content">Rom 81</td>
-                    <td class="table_content">17.Mars</td>
-                    <td class="table_content">HDMI/VGA</td>
-                    <td class="table_content">4</td>
-                    <td><button class="reserve_room">Reserver</button></td>
-                </tr>
-                <tr>   
-                    <td class="table_content">Rom 81</td>
-                    <td class="table_content">17.Mars</td>
-                    <td class="table_content">HDMI/VGA</td>
-                    <td class="table_content">4</td>
-                    <td><button class="reserve_room">Reserver
-            </button></td>
+                    <td class="table_content">"Room"</td>
+                    <td class="table_content">"Date"</td>
+                    <td class="table_content">"Connection"</td>
+                    <td class="table_content">"Capacity"</td>
+                    <td class="button"><button class="reserve_room">Reserver</button></td>
                 </tr>
             </table>
             
@@ -132,34 +121,31 @@
     <!-- Finder End -------------------------------------->
     <!---------------------------------------------------->
     <!-- Your Reservations Start ------------------------->
-    <div id="reservation_list">
+    <div id="reservation_list" class="font_style_class">
         <table>
                 <tr class="reservation_list">
                     <th class="reservation_head">Dine reservasjoner for Mars</th>
+                    <th class="reservation_head"></th>
+                    <th class="reservation_head"></th>
+                    <th class="reservation_head"></th>
+                    <th class="reservation_head"></th>
+                    <th class="reservation_head"></th>
                 </tr>
                 <tr>
-                    <td class="reservation_content">19.Mars</td>
-                    <td cclass="reservation_content">Rom 81</td>
-                    <td><button class="reserve_room">Endre</button></td>
-                    <td><button class="reserve_room">Kanseler</button></td>
+                    <td class="reservation_content">"Room"</td>
+                    <td class="reservation_content">"Date"</td>
+                    <td class="reservation_content">"Capacity"</td>
+                    <td class="reservation_content">"Equipment"</td>
+                    <td class="button"><button class="reserve_room">Endre</button></td>
+                    <td class="button"><button class="reserve_room">Kanseler</button></td>
                 </tr>
                 <tr>
-                    <td class="reservation_content">19.Mars</td>
-                    <td cclass="reservation_content">Rom 81</td>
-                    <td><button class="reserve_room">Endre</button></td>
-                    <td><button class="reserve_room">Kanseler</button></td>
-                </tr>
-                <tr>
-                    <td class="reservation_content">19.Mars</td>
-                    <td cclass="reservation_content">Rom 81</td>
-                    <td><button class="reserve_room">Endre</button></td>
-                    <td><button class="reserve_room">Kanseler</button></td>
-                </tr>
-                <tr>
-                    <td class="reservation_content">19.Mars</td>
-                    <td cclass="reservation_content">Rom 81</td>
-                    <td><button class="reserve_room">Endre</button></td>
-                    <td><button class="reserve_room">Kanseler</button></td>
+                    <td class="reservation_content">"Room"</td>
+                    <td class="reservation_content">"Date"</td>
+                    <td class="reservation_content">"Capacity"</td>
+                    <td class="reservation_content">"Equipment"</td>
+                    <td class="button"><button class="reserve_room">Endre</button></td>
+                    <td class="button"><button class="reserve_room">Kanseler</button></td>
                 </tr>
         </table>
     </div>

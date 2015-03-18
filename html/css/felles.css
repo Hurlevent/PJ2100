@@ -22,7 +22,8 @@ body {
 
 	}
 #wrapper {
-    width: 1080px;
+    width: auto;
+    max-width: 1080px;
     height: 100%;
     margin:auto;
     position: relative;
@@ -62,7 +63,6 @@ nav {
     float: left;
     text-align: center;
     font-size: 1.2em;
-    font-family: sans-serif;
 	}
 
 nav ul {
@@ -98,7 +98,6 @@ nav a:hover{
     text-align: center;
     padding:5px;
     font-size: 1.2em;
-    font-family: sans-serif;
     display: block;
     margin: 0;
     margin-top: 109px;
@@ -126,7 +125,7 @@ nav a:hover{
 /*---------- Søk og Kalender Start ----------*/
 /*-------------------------------------------*/
 #finder{
-    width: 100%;
+    width: auto;
     min-height: 300px;
     position: relative;
     padding-left: 40px;
@@ -140,6 +139,10 @@ nav a:hover{
     width: 30%;
     float: left;
     position: relative;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
 }
 
 menu {
@@ -152,8 +155,9 @@ menu dl {
 }
 
 menu li{
-    width: 300px;
+    width: auto;
     height: 30px;
+    margin-bottom: 1em;
     position: relative;
 }
 
@@ -168,7 +172,6 @@ menu p{
     width:120px;
     font-size: 1.0em;
     float: left;
-    font-family: sans-serif;
     display: inline-block;
 }
 
@@ -176,7 +179,6 @@ menu label{
     width:120px;
     font-size: 1.0em;
     float: left;
-    font-family: sans-serif;
     display: inline-block;
 }
 
@@ -189,7 +191,7 @@ menu label{
 }
 
 .search_button{
-    width:200px;
+    width:100%;
     height: 30px;
     margin-left: 0;
     margin-right: 0;
@@ -217,6 +219,7 @@ menu label{
 }
 
 .kalender {
+    width: 100%;
 	float: left;
     text-align: left;
     border-collapse: collapse;
@@ -224,15 +227,8 @@ menu label{
     
 }
 
-.kalender tr{
-    width: auto;
-}
-
 .kalender th, td{
-    width:100px;
-    height: 30px;
-    padding-left: 15px;
-    margin: 0;
+    height: 40px;
 }
 
 .kalender th{
@@ -240,26 +236,39 @@ menu label{
 }
 
 .table_head{
-    font-family: sans-serif;
     font-size: 0.9em;
     background-color: #000;
     color: #FFF;
 }
 
 .table_content{
-    font-family: sans-serif;
     font-size: 0.8em;
+}
     
+
+
+/*-------------------------------------------*/
+/* Assets */ 
+
+tr{
+    width: auto;
 }
 
-.kalender tr:nth-child(even) {
+th, td{
+    width:auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0;
+}
+
+tr:nth-child(even) {
     background-color: #eee;
 }
 
-.kalender tr:nth-child(odd) {
+tr:nth-child(odd) {
     background-color: #fff;
 }
-    
+
 .reserve_room{
     width: 90px;
     margin: 0;
@@ -277,11 +286,13 @@ menu label{
    
 }
 
-/*-------------------------------------------*/
-/* Assets */ 
+.button {
+    text-align: center;
+}
 
-button {
-	}
+.font_style_class{
+    font-family: sans-serif;
+}
 
 /*-------------------------------------------*/
 /*---------- Søk og Kalender Slutt ----------*/
@@ -290,27 +301,48 @@ button {
 /*-------------------------------------------*/
 
 #reservation_list{
-    width: 100%;
+    width: auto;
     height: auto;
     padding-left: 40px;
-    padding-right: 40px; 
+    padding-right: 40px;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+#reservation_list table{
+    width:100%;
+    float: left;
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 0.9em;
+}
+
+#reservation_list table tr:nth-child(even) {
+    background-color: #eee;
+}
+
+#reservation_list table tr:nth-child(odd) {
+    background-color: #fff;
 }
 
 .reservation_list{
     width: 100%;
     height: 40px;
-    padding-left:15px;
-    padding-right: 15px;
     background-color: #000;
     
     
 }
 
 .reservation_head{
-    width: 100%;
-    text-align: left;
+    width: auto;
+    font-size: 0.9em;
+    background-color: #000;
     color: #FFF;
-    
+    padding-left:15px;
+    padding-right: 15px;
    
 }
 

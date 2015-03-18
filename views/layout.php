@@ -24,7 +24,7 @@
             <img class="icon" src="../bilder/Person_Icon.svg" alt="icon">
             <?php
              if ($user){
-                    echo "<a href='#'>" . $user->first_name . "</a>";
+                    echo "<a href='#'>" . $user["full_name"] . "</a>";
                } else {
                    echo "<a href='/logg-inn.php'>Trykk her for å logge inn</a>";
                }

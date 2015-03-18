@@ -11,9 +11,11 @@ if(!isset($_SESSION["Password"])){
 }
 
 if(!isset($_SESSION["Date"])){
-    $datetimeobject = new DateTime();
-    $timestamp = $datetimeobject->getTimestamp();
-    $_SESSION["Date"] = date('Y/m/d', $timestamp);
+    //$datetimeobject = new DateTime();
+    //$timestamp = $datetimeobject->getTimestamp();
+    //$_SESSION["Date"] = date('Y/m/d', $timestamp);
+    //$date = $_SESSION["Date"];
+    $_SESSION["Date"] = getdate();
     $date = $_SESSION["Date"];
 } else {
     $date = $_SESSION["Date"];

@@ -3,7 +3,7 @@
   'user' => $user
 ]) ?>
 
-<form action="login.php" method="POST">
+<form action="../login.php" method="POST">
     <p>Brukernavn</p>
     <input type="username" name="username" />
     <p>Passord</p>

@@ -10,7 +10,7 @@
     <header>
   
         <logo>
-            <img src="../../bilder/Venstrejustert_svart_Oslo_ACT.svg" alt="logo"/>
+            <img src="../bilder/Venstrejustert_svart_Oslo_ACT.svg" alt="logo"/>
         </logo>
   
         <nav>
@@ -21,13 +21,13 @@
         </nav>
     
         <div id="about">
-            <img class="icon" src="../../bilder/Person_Icon.svg" alt="icon">
+            <img class="icon" src="../bilder/Person_Icon.svg" alt="icon">
             <?php
-                if ($user){
-                    echo "<a href='#'>" . $user . "</a>";
-                } else {
-                    echo "<a href='/logg-inn.php'>Trykk her for å logge inn</a>";
-                }
+             if ($user){
+                    echo "<a href='#'>" . $user->first_name . "</a>";
+               } else {
+                   echo "<a href='/logg-inn.php'>Trykk her for å logge inn</a>";
+               }
             ?>
         </div>
     </header>

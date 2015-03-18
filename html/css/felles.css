@@ -24,7 +24,7 @@ body {
 #wrapper {
     width: auto;
     max-width: 1080px;
-    height: 100%;
+    height: auto;
     margin:auto;
     position: relative;
 	}
@@ -71,11 +71,12 @@ nav ul {
 
 a{
     text-decoration: none;
-    color: rgb(00,00,00)
+    color: rgb(00,00,00);
+    padding-bottom: 5px;
 }
 
 nav a:hover{ 
-    border-bottom:1px solid #000; 
+    border-bottom:2px solid rgb(255,112,97); 
 }
 
 .navbar {
@@ -126,13 +127,14 @@ nav a:hover{
     min-height: 300px;
     position: relative;
     display: inline-block;
+    margin-bottom: 60px;
 }
 
 /*-------------------------------------------*/
 /* Search Menu */ 
 
 #search_menu{
-    width: 25.5%;
+    width: 25.59%;
     float: left;
     position: relative;
     padding-left: 40px;
@@ -196,11 +198,12 @@ menu label{
 /* Calendar Overview */ 
 
 #shedule_list{
-    width: 63%;
+    width: 63.3%;
     height: auto;
     float: left;
     position: relative;
     padding-left: 40px;
+    padding-right: 40px;
     -webkit-margin-before: 1em;
     -webkit-margin-after: 1em;
     -webkit-margin-start: 0px;
@@ -284,21 +287,63 @@ tr:nth-child(odd) {
     font-family: sans-serif;
 }
 
+.border{
+    background: url(../../bilder/border.png)center center repeat-x;
+    background-size: 3rem;
+    height: 8rem;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
 /*-------------------------------------------*/
 /*---------- Søk og Kalender Slutt ----------*/
 /*-------------------------------------------*/
 /*---------- Your Reservations Start --------*/
 /*-------------------------------------------*/
 
-#reservation_list{
-    width: auto;
+#reservations_overview{
+    width: 100%;
+    min-height: 300px;
+    position: relative;
+    display: inline-block;
+}
+
+/*-------------------------------------------*/
+/* Latest Reservation */
+
+#latest_reservation{
+    width: 92.59%;
     height: auto;
+    min-height: 100px;
+    position: relative;
+    margin-bottom: 60px;
     padding-left: 40px;
     padding-right: 40px;
+}
+
+#latest_reservation table{
+    width:100%;
+    float: left;
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 0.9em;
+}
+
+/*-------------------------------------------*/
+/* Reservation List */
+
+#reservation_list{
+    width: 92.59%;
+    height: auto;
+    min-height: 200px;
+    position: relative;
     -webkit-margin-before: 1em;
     -webkit-margin-after: 1em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 #reservation_list table{
@@ -339,10 +384,11 @@ tr:nth-child(odd) {
 /*---------- Footer Start -------------------*/
 /*-------------------------------------------*/
 footer {
-	bottom: 0;
-	width: 1080px;
-	margin: auto;
-	text-align: center;
+	background: url(../../bilder/border.png)center center repeat-x;
+    background-size: 3rem;
+    height: 8rem;
+    margin-left: 40px;
+    margin-right: 40px;
 	}
 /*-------------------------------------------*/
 /*---------- Footer Slutt -------------------*/

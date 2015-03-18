@@ -11,9 +11,10 @@ if(!isset($_SESSION["Password"])){
 }
 
 if(!isset($_SESSION["Date"])){
-    $date = new DateTime();
-    $timestamp = $date->getTimestamp();
+    $datetimeobject = new DateTime();
+    $timestamp = $datetimeobject->getTimestamp();
     $_SESSION["Date"] = date('Y/m/d', $timestamp);
+    $date = $_SESSION["Date"];
 } else {
     $date = $_SESSION["Date"];
 }
@@ -69,6 +70,9 @@ $fullname = $_SESSION["Fullname"];
     <!-- About Start ------------------------------------->
         <div id="about">
             <img class="icon" src="../../bilder/Person_Icon.svg" alt="icon">
+            <!--
+             Logger inn med login funksjonen i database.php, tar utgangspunkt i $_SESSION variablene
+             -->
             <?php
             if($database->logIn($username, $password)){
                 echo "<a href='#'>" . $fullname . "</a>";
@@ -124,6 +128,7 @@ $fullname = $_SESSION["Fullname"];
 	<!-- Her skal det gå en for loop som skriver ut html-en -->
         <div id="shedule_list">
             <table class="kalender">
+                <!-- VIKTIG, dette er tabellen som viser alle ledige rom for en viss dato. Metoden som blir kalt på ligger i database.php -->
                 <?php
                 $database->showAvailable($date);
                 ?>

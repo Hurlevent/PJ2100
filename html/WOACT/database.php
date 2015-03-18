@@ -68,7 +68,7 @@ class DB
     }
 
     public function showAvailable($date){
-        $sql = "SELECT DISTINCT room.id AS rid, room.name AS rname, room.capacity AS capacity, room.projector AS projector FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE room.id NOT IN( SELECT room.id FROM room JOIN booking ON room.id = booking.room_id WHERE DATE_FORMAT('" . $date . "', '%Y/%m/%d') = DATE_FORMAT(booking.booked_from, '%Y/%m/%d'));";
+        $sql = "SELECT DISTINCT room.id AS rid, room.name AS rname, room.capacity AS capacity, room.projector AS projector FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE room.id NOT IN( SELECT room.id FROM room JOIN booking ON room.id = booking.room_id WHERE DATE_FORMAT('" . $date . "', '%Y-%m-%d') = DATE_FORMAT(booking.booked_from, '%Y-%m-%d'));";
 
         $result = $this->connection->query($sql);
         echo "<tr><td class='table_head'>Room ID</td><td class='table_head'>Room name</td><td class='table_head'>Capacity</td><td class='table_head'>Prosjektor</td><td class='table_head'></td></tr>";
@@ -87,7 +87,7 @@ class DB
         $sql = "SELECT id FROM room WHERE name = '$room'";
         $result = $this->connection->query($sql);
         $roomID = $result->fetch_assoc();
-        $sql = "INSERT INTO booking VALUES (NULL, STR_TO_DATE('" . $from . "', '%Y/%m/%d'), STR_TO_DATE('" . $to . "', '%Y/%m/%d'), " . $roomID['id'] .  ", " . $id['student_id'] . ", NULL);";
+        $sql = "INSERT INTO booking VALUES (NULL, STR_TO_DATE('" . $from . "', '%Y-%m-%d'), STR_TO_DATE('" . $to . "', '%Y-%m-%d'), " . $roomID['id'] .  ", " . $id['student_id'] . ", NULL);";
         $this->connection->query($sql);
     }
 }

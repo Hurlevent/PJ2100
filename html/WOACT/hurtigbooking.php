@@ -22,5 +22,5 @@ if($database->logIn($username, $password)){
     $database->rentRoom($username, $room, $date, $date);
     echo "<a href='desktop_home.php'>Tilbake til hovedsiden</a>";
 }
-
+    header("Location: desktop_home.php");
 ?>

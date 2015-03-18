@@ -1,11 +1,17 @@
 <?php $this->layout('layout', [
   'page_title' => 'Rombooking CK45',
-  'user' => $user
-]) ?>
+  'user' => $user]);
+    require_once('database.php');
+ ?>
     <div id="finder">
         <div id="search_menu">
             <menu>
                 <dl>
+                    <li>
+                        <?php
+                        echo "Dagens dato: " . $_SESSION["Date"];
+                        ?>
+                    </li>
                     <li>
                         <form action="update.php" method="POST">
                         <h3>Sett filter</h3>

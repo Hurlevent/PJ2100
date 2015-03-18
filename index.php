@@ -1,12 +1,15 @@
 <?php
 
 require 'config.php';
+if(!isset($_SESSION["Date"])){
+    // default til dagens dato
+    $date = new DateTime();
+    $timestamp = $date->getTimestamp();
+    $currentDate = date('Y-m-d', $timestamp); // dagens dato
+    $_SESSION["Date"] = $currentDate;
+}
 
-$date = new DateTime();
-$timestamp = $date->getTimestamp();
-$currentDateTime = date('Y/m/d', $timestamp) . ' ' . date('00:00');
-
-$free_rooms_query = "SELECT DISTINCT room.id AS rid, room.name AS rname, room.capacity AS capacity, room.projector AS projector FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE room.id NOT IN( SELECT room.id FROM room JOIN booking ON room.id = booking.room_id WHERE DATE_FORMAT('" . $currentDateTime . "', '%Y/%m/%d') = DATE_FORMAT(booking.booked_from, '%Y/%m/%d'));";
+$free_rooms_query = "SELECT DISTINCT room.id AS rid, room.name AS rname, room.capacity AS capacity, room.projector AS projector FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE room.id NOT IN( SELECT room.id FROM room JOIN booking ON room.id = booking.room_id WHERE DATE_FORMAT('" . $_SESSION["Date"] . "', '%Y/%m/%d') = DATE_FORMAT(booking.booked_from, '%Y/%m/%d'));";
 
 if ($result = mysqli_query($link, $free_rooms_query)) {
   $free_rooms = array();
@@ -21,6 +24,5 @@ if ($result = mysqli_query($link, $free_rooms_query)) {
 
 render_page('index', array(
     'password' => $password,
-    'date' => $date,
     'free_rooms' => $free_rooms
 ));

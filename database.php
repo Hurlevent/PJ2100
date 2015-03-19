@@ -14,7 +14,7 @@ class DB
         $this->connection = mysqli_connect($this->host, $this->username, $this->password, $this->database);
     }
 
-    public function logIn($user, $pass)
+     public function logIn($user, $pass)
     {
 
         $sql = "SELECT username FROM user WHERE username = '$user' AND password = '$pass'";
@@ -31,31 +31,9 @@ class DB
         }
         return false;
     }
+    
 
-    public function hasConnection()
-    {
-        if ($this->connection != null) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    // this funtion is for testing only
-    public function test($user)
-    {
-        $sql = "SELECT * FROM user WHERE name = '$user'";
-        $result = $this->connection->query($sql);
-        return $result;
-    }
-
-
-    public function getDatabase()
-    {
-        $result = $this->database;
-        return $result;
-    }
-
+    /*
 
     public function showRooms()
     {
@@ -67,6 +45,8 @@ class DB
         }
     }
 
+    */
+    /*
     public function showAvailable($date){
         $sql = "SELECT DISTINCT room.id AS rid, room.name AS rname, room.capacity AS capacity, room.projector AS projector FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE room.id NOT IN( SELECT room.id FROM room JOIN booking ON room.id = booking.room_id WHERE DATE_FORMAT('" . $date . "', '%Y-%m-%d') = DATE_FORMAT(booking.booked_from, '%Y-%m-%d'));";
 
@@ -79,6 +59,7 @@ class DB
             echo "</tr>";
         }
     }
+    */
         // parameter: username, room_name, date, date
     public function rentRoom($user, $room, $from, $to)
     {
@@ -91,7 +72,7 @@ class DB
         $sql = "INSERT INTO booking VALUES (NULL, STR_TO_DATE('" . $from . "', '%Y-%m-%d'), STR_TO_DATE('" . $to . "', '%Y-%m-%d'), " . $roomID['id'] . ", " . $id['student_id'] . ", NULL);";
         $this->connection->query($sql);
     }
-
+/*
     public function getCurrentDate(){
         $sql = "SELECT Current_date() AS CurrentDate";
         $result = $this->connection->query($sql);
@@ -101,6 +82,7 @@ class DB
         }
 
     }
+*/
 }
 
 

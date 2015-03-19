@@ -55,10 +55,10 @@
             <table class="kalender">
                 <?php
                 if(!isset($_COOKIE["Prosjektor"])){
-                    setcookie("Prosjektor", "Alle", time() + 3600);
+                    $_COOKIE["Prosjektor"] = "Alle";
                 }
                 if(!isset($_COOKIE["Capacity"])){
-                    setcookie("Capacity", "Alle", time() + 3600);
+                    $_COOKIE["Capacity"] = "Alle";
                 }
                     echo "<tr>";
                     echo "<th class='table_details'>Valgt dato: " . $_SESSION["Date"] . "</th >";

@@ -53,9 +53,14 @@
 
         <div id="shedule_list" class="font_style_class">
             <table class="kalender">
-                <tr>
-                    <th class='table'></th>
-                </tr>
+                <?php
+                if(isset($_COOKIE["Prosjektor"]) ) {
+                    <
+                    tr >
+                    <th class='table' > </th >
+                </tr >
+                }
+                ?>
               <tr>
                 <th class='table_head'>Room name</th>
                 <th class='table_head'>Plasser</th>

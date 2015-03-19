@@ -18,16 +18,20 @@
 @charset "UTF-8";
 
 body {
-    margin: 0;
+    margin-top:0px;
+    margin-bottom: 0px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
 
-	}
 #wrapper {
     width: auto;
     max-width: 1080px;
     height: auto;
     margin:auto;
     position: relative;
-	}
+}
+
 /*-------------------------------------------*/
 /*---------- Header Start -------------------*/
 /*-------------------------------------------*/
@@ -46,13 +50,14 @@ header {
 /*-------------------------------------------*/
 /* Logo*/
 
-logo{
+logo {
     position: relative;
     float: left;
     display: inline-block;
     max-width: 40%;
     margin-top: 28px; 
 }
+
 logo img{
     width: 100%;
     
@@ -360,6 +365,11 @@ input[type=text], input[type=password] {
     background: #eee;
     border-radius: 3px;
     outline: none;
+    width: 100%;
+}
+
+.login-area {
+    margin: 0 auto;
     width: 40%;
 }
 
@@ -369,6 +379,8 @@ input[type=text], input[type=password] {
 
 .login-form button {
     margin-top: 20px;
+    outline: none;
+    cursor: pointer;
 }
 
 .submit-button{
@@ -381,6 +393,14 @@ input[type=text], input[type=password] {
     font-size: 16px;
     cursor: pointer;
     height: 100%;
+}
+
+.error {
+    padding: 10px 10px 7px;
+    border-radius: 3px;
+    font-family: sans-serif;
+    background-color: #FFF2BB;
+    width: auto;
 }
 
 /*-------------------------------------------*/

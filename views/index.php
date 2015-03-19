@@ -17,7 +17,7 @@
                         <h3>Sett filter</h3>
                     </li>
                     <li>
-                        <input type="date" name="dato" value="<?php echo date('Y-m-d'); ?>" />
+                        <input class="datepicker" type="date" name="dato" value="<?php echo date('Y-m-d'); ?>" />
                     </li>
                     <li>
                         <label for="checkbox">Prosjektor</label>

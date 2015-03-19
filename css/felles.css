@@ -205,7 +205,9 @@ menu label{
 .table_content{
     font-size: 0.8em;
 }
-    
+.table_details{
+    font-size: 0.4em;
+}
 
 
 /*-------------------------------------------*/

@@ -54,11 +54,12 @@
         <div id="shedule_list" class="font_style_class">
             <table class="kalender">
                 <?php
-                if(isset($_COOKIE["Prosjektor"]) ) {
-                    <
-                    tr >
-                    <th class='table' > </th >
-                </tr >
+                if(isset($_COOKIE["Prosjektor"]) && $_COOKIE["Prosjektor"] != "null" || isset($_COOKIE["Capacity"]) && $_COOKIE["Capacity"]) {
+                    echo "<tr>";
+                    echo "<th class='table_details'>Valgt dato: " . $_SESSION["Date"] . "</th >";
+                    echo "<th class='table_details'>Prosjektor: " . $_COOKIE["Prosjektor"] . "</th >";
+                    echo "<th class='table_details'>Antall personer: " . $_COOKIE["Capacity"] . "</th >";
+                    echo "</tr>";
                 }
                 ?>
               <tr>

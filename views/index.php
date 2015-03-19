@@ -28,7 +28,7 @@
                     </li>
                     <li><p>Antall personer</p>
                         <select class="person_select" name="capacity">
-                            <option value="null">Alle</option>
+                            <option value="Alle">Alle</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -54,7 +54,7 @@
         <div id="shedule_list" class="font_style_class">
             <table class="kalender">
                 <?php
-                if(isset($_COOKIE["Prosjektor"]) && $_COOKIE["Prosjektor"] != "null" || isset($_COOKIE["Capacity"]) && $_COOKIE["Capacity"]) {
+                if(isset($_COOKIE["Prosjektor"]) && $_COOKIE["Prosjektor"] != "Alle" || isset($_COOKIE["Capacity"]) && $_COOKIE["Capacity"] != "Alle") {
                     echo "<tr>";
                     echo "<th class='table_details'>Valgt dato: " . $_SESSION["Date"] . "</th >";
                     echo "<th class='table_details'>Prosjektor: " . $_COOKIE["Prosjektor"] . "</th >";

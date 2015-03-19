@@ -86,8 +86,8 @@
                     <tr>
                         <td class="table_content"><?php echo date('d/m', strtotime(str_replace('-','/', $item['booked_from']))); ?></td>
                         <td class="table_content"><?php echo $item['room_name'] ?></td>
-                        <td><button class="reserve_room">Endre</button></td>
+                        <td><form action="unbook.php" method="POST"><input type="hidden" name="booking" value="<?php echo $item['bid']; ?>" /><input type="submit" class="reserve_room" value="Slett" /></form></td>
                     </tr>
-                <?php endforeach; ?>
+                <?php endforeach;  ?>
         </table>
     </div>

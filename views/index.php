@@ -21,7 +21,7 @@
                     <li>
                         <label for="checkbox">Prosjektor</label>
                         <select class="person_select" name="prosjektor">
-                            <option value="null">Alle</option>
+                            <option value="Alle">Alle</option>
                             <option value="HDMI">HDMI</option>
                             <option value="VGA">VGA</option>
                         </select>
@@ -54,13 +54,11 @@
         <div id="shedule_list" class="font_style_class">
             <table class="kalender">
                 <?php
-                if(isset($_COOKIE["Prosjektor"]) && $_COOKIE["Prosjektor"] != "Alle" || isset($_COOKIE["Capacity"]) && $_COOKIE["Capacity"] != "Alle") {
                     echo "<tr>";
                     echo "<th class='table_details'>Valgt dato: " . $_SESSION["Date"] . "</th >";
                     echo "<th class='table_details'>Prosjektor: " . $_COOKIE["Prosjektor"] . "</th >";
                     echo "<th class='table_details'>Antall personer: " . $_COOKIE["Capacity"] . "</th >";
                     echo "</tr>";
-                }
                 ?>
               <tr>
                 <th class='table_head'>Rom</th>

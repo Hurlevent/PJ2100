@@ -31,35 +31,7 @@ class DB
         }
         return false;
     }
-    
 
-    /*
-
-    public function showRooms()
-    {
-        $sql = "SELECT * FROM room";
-        $result = $this->connection->query($sql);
-        for($i = 0; $i < mysqli_num_rows($result); $i++){
-            $currentrow = $result->fetch_assoc();
-            array_push($this->allRooms, $currentrow['name']);
-        }
-    }
-
-    */
-    /*
-    public function showAvailable($date){
-        $sql = "SELECT DISTINCT room.id AS rid, room.name AS rname, room.capacity AS capacity, room.projector AS projector FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE room.id NOT IN( SELECT room.id FROM room JOIN booking ON room.id = booking.room_id WHERE DATE_FORMAT('" . $date . "', '%Y-%m-%d') = DATE_FORMAT(booking.booked_from, '%Y-%m-%d'));";
-
-        $result = $this->connection->query($sql);
-        echo "<tr><td class='table_head'>Room ID</td><td class='table_head'>Room name</td><td class='table_head'>Capacity</td><td class='table_head'>Prosjektor</td><td class='table_head'></td></tr>";
-        for($i = 0; $i < mysqli_num_rows($result); $i++) {
-            $row = $result->fetch_assoc();
-            echo "<tr>";
-            echo "<form action='hurtigbooking.php' method='POST'><td class='table_content'>" . $row["rid"] . "</td><td class='table_content'>" . $row["rname"] . "</td><td class='table_content'>" . $row["capacity"] . "</td><td class='table_content'>" . $row["projector"] . "</td><td class='table_content'><input type='hidden' name='room' value='" . $row["rname"] . "' /><input type='hidden' name='date' value='" . $date . "' /><input type='hidden' name='projector' value='" . $row["projector"] . "' /><input type='hidden' name='capacity' value='" . $row["capacity"] . "' /><input type='submit' value='Reserver' class='reserve_room' /></form></td>";
-            echo "</tr>";
-        }
-    }
-    */
         // parameter: username, room_name, date, date
     public function rentRoom($user, $room, $from, $to)
     {
@@ -72,18 +44,5 @@ class DB
         $sql = "INSERT INTO booking VALUES (NULL, STR_TO_DATE('" . $from . "', '%Y-%m-%d'), STR_TO_DATE('" . $to . "', '%Y-%m-%d'), " . $roomID['id'] . ", " . $id['student_id'] . ", NULL);";
         $this->connection->query($sql);
     }
-/*
-    public function getCurrentDate(){
-        $sql = "SELECT Current_date() AS CurrentDate";
-        $result = $this->connection->query($sql);
-        $row = $result->fetch_field()->CurrentDate;
-        if(mysqli_num_rows($row)) {
-            return $row;
-        }
-
-    }
-*/
 }
-
-
 ?>

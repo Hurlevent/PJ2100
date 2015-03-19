@@ -1,13 +1,12 @@
 <?php $this->layout('layout', [
-  'page_title' => 'Rombooking CK45',
+  'page_title' => 'Rombooking CK32',
   'user' => $user]);
     require_once('database.php');
  ?>
     <!-- Finder Start EASTER EGG -->
     <div id="finder">
         
-        <!---------------------------------------------------->
-        <!-- Search Menu Start ------------------------------->
+        <!-- Search Menu Start -->
         
         <div id="search_menu" class="font_style_class">
             <menu>

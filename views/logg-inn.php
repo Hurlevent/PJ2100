@@ -1,5 +1,5 @@
 <?php  $this->layout('layout', [
-  'page_title' => 'Rombooking CK45 – Logg inn',
+  'page_title' => 'Rombooking CK32 – Logg inn',
   'user' => $user
 ])  ?>
 

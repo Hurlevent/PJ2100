@@ -93,13 +93,17 @@ if($bookings_count > 0) {
             <table>
                 <tr class="reservation_list">
                     <th class="reservation_head">Dato</th>
-                    <th class="reservation_head">Romnavn</th>
+                    <th class="reservation_head">Rom</th>
+                    <th class="reservation_head">Antall personer</th>
+                    <th class="reservation_head">Prosjektor</th>
                     <th class="reservation_head">Handlinger</th>
                 </tr>
                 <?php foreach ($bookings as $item): ?>
                     <tr>
                         <td class="reservation_content"><?php echo date('d/m', strtotime(str_replace('-', '/', $item['booked_from']))); ?></td>
-                        <td class="reservation_content"><?php echo $item['room_name'] ?></td>
+                        <td class="reservation_content"><?php echo $item['room_name']; ?></td>
+                        <td class="reservation_content"><?php echo $item['capacity']; ?></td>
+                        <td class="reservation_content"><?php echo $item['projector']; ?></td>
                         <td class="button">
                             <form action="unbook.php" method="POST"><input type="hidden" name="booking"
                                                                            value="<?php echo $item['bid']; ?>"/><input

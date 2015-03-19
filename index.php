@@ -38,7 +38,7 @@ if ($result = mysqli_query($link, $free_rooms_query)) {
 
 //$free_rooms = 'SELECT room.id, name, projector, capacity FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE booking.booked_from NOT BETWEEN CURRENT_DATE() AND CURRENT_DATE() + INTERVAL 1 DAY OR booking.booked_from IS NULL';
 
-    $bookings_query = "SELECT room_id, booked_from, room.name AS room_name, booking.id AS bid FROM booking LEFT JOIN room ON booking.room_id = room.id WHERE user_id = " . $_SESSION["Id"] . " AND booked_from >= CURRENT_DATE() ORDER BY booked_from ASC;";
+    $bookings_query = "SELECT room_id, booked_from, room.name AS room_name, booking.id AS bid, room.projector AS projector, room.capacity AS capacity FROM booking LEFT JOIN room ON booking.room_id = room.id WHERE user_id = " . $_SESSION["Id"] . " AND booked_from >= CURRENT_DATE() ORDER BY booked_from ASC;";
 
     if ($result = mysqli_query($link, $bookings_query)) {
         $bookings = array();

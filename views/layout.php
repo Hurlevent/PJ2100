@@ -10,7 +10,7 @@
     <header>
   
         <logo>
-            <a href='/'><img src="bilder/Venstrejustert_svart_Oslo_ACT.svg" alt="logo"/></a>
+            <a href='/'><img src="../bilder/WACT_Venstrejustert_svart_rgb_2.svg" alt="logo"/></a>
         </logo>
   
         <nav>
@@ -34,5 +34,8 @@
     <div class='content'>
       <?=$this->section('content')?>
     </div>
+    <footer>
+      <img src="../bilder/WACT_svart_rgb.svg" style="width:20%;">
+    </footer>
   </body>
 </html>

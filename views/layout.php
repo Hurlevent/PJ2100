@@ -33,7 +33,7 @@
       <?=$this->section('content')?>
     </div>
     <footer>
-      <img src="./bilder/WACT_svart_rgb.svg" style="width:20%;">
+      <img src="./bilder/WACT_svart_rgb.svg" style="width:140px;">
       <br>
       <p><a href="http://www.westerdals.no/"> Westerdals Oslo ACT</a></p>
     </footer>

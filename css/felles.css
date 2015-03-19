@@ -24,12 +24,11 @@ body {
     margin-right: 50px;
 }
 
-#wrapper {
+.content {
     width: auto;
     max-width: 1080px;
     height: auto;
     margin:auto;
-    position: relative;
 }
 
 /*-------------------------------------------*/
@@ -50,17 +49,17 @@ header {
 /*-------------------------------------------*/
 /* Logo*/
 
-logo {
+.logo {
     position: relative;
     float: left;
     display: inline-block;
-    max-width: 40%;
+    /*max-width: 40%;*/
     margin-top: 28px; 
 }
 
-logo img{
-    width: 100%;
-    
+.logo img{
+    /*width: 100%;*/
+    width: 249px;
 }
 /*-------------------------------------------*/
 /* Navigation */ 
@@ -70,7 +69,7 @@ nav {
     float: left;
     text-align: center;
     font-size: 1em;
-	}
+    }
 
 nav ul {
     margin-top: 38.5%;
@@ -88,42 +87,10 @@ nav a:hover{
 }
 
 .navbar {
-	list-style: none;
-	margin: 20px;
-	display: inline;
-	}
-/*-------------------------------------------*/
-/* My Page */ 
-
-#about{
-    position: relative;
-    width: 30%;
-    float: right;
-}
-
-#about a {
-    text-align: center;
-    font-size: 1em;
-    display: block;
-    margin: 0;
-    margin-top: 38.5%;
-    margin-right: 45px;
-    margin-left:85px;
-    width: auto;
-}
-
-#about a:hover{
-    color: #FF7061;
-}
-
-.icon {
-    margin-top: 32%;
-    margin-left: 45px;
-    float: left;
-    width: 15%;
-    height: auto;
-    display: block;
-}
+    list-style: none;
+    margin: 20px;
+    display: inline;
+    }
 
 /*-------------------------------------------*/
 /*---------- Header Slutt -------------------*/
@@ -149,12 +116,12 @@ nav a:hover{
 
 menu {
     width: 100%;
-	float: left;
+    float: left;
     padding: 0;
     margin: 0;
 }
 menu dl {
-	list-style: none;
+    list-style: none;
     margin: 0;
 }
 
@@ -216,7 +183,7 @@ menu label{
 
 .kalender {
     width: 100%;
-	float: left;
+    float: left;
     text-align: left;
     border-collapse: collapse;
     border-spacing: 0;
@@ -233,8 +200,8 @@ menu label{
 
 .table_head{
     font-size: 0.9em;
-    background-color: #000;
-    color: #FFF;
+    background-color: #202020;
+    color: #FFFFFF;
 }
 
 .table_content{
@@ -368,6 +335,16 @@ input[type=text], input[type=password] {
     width: 100%;
 }
 
+.datepicker {
+    font-size: 20px;
+    font-family: sans-serif;
+    padding: 5px;
+    border: 0;
+    background: #eee;
+    box-sizing: border-box;
+    width: 210px;
+}
+
 .login-area {
     margin: 0 auto;
     width: 40%;
@@ -403,6 +380,31 @@ input[type=text], input[type=password] {
     width: auto;
 }
 
+.navigation {
+    float: right;
+    list-style: none;
+    margin: 90px 0 0;
+    padding: 0;
+}
+
+.navigation li {
+    padding: 0;
+    display: inline-block;
+    margin-left: 14px;
+}
+
+.navigation a:hover{
+    color: #FF7061;
+}
+
+.icon {
+    float: left;
+    width: 16px;
+    display: block;
+    margin-right: 4px;
+    margin-top: -1px;
+}
+
 /*-------------------------------------------*/
 /* Reservation List */
 
@@ -435,8 +437,8 @@ input[type=text], input[type=password] {
 
 .reservation_head{
     font-size: 0.9em;
-    background-color: #000;
-    color: #FFF;
+    background-color: #202020;
+    color: #FFFFFF;
    
 }
 
@@ -454,7 +456,7 @@ footer {
     text-align: center;
     margin-left: 40px;
     margin-right: 40px;
-	}
+    }
 /*-------------------------------------------*/
 /*---------- Footer Slutt -------------------*/
 /*-------------------------------------------*/

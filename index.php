@@ -33,7 +33,23 @@ if ($result = mysqli_query($link, $free_rooms_query)) {
   echo 'Database error: ' . mysqli_error($link);
 }
 
+//$free_rooms = 'SELECT room.id, name, projector, capacity FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE booking.booked_from NOT BETWEEN CURRENT_DATE() AND CURRENT_DATE() + INTERVAL 1 DAY OR booking.booked_from IS NULL';
+
+$bookings_query = 'SELECT room_id, booked_from, room.name AS room_name FROM booking LEFT JOIN room ON booking.room_id = room.id WHERE user_id = 1 AND booked_from >= CURRENT_DATE()';
+
+if ($result = mysqli_query($link, $bookings_query)) {
+  $bookings = array();
+  $bookings_count = mysqli_num_rows($result);
+  for($i = 0;$i < $bookings_count;$i++){
+    $row = $result->fetch_array(MYSQLI_ASSOC);
+    array_push($bookings, $row);
+  }
+} else {
+  echo 'Database error: ' . mysqli_error($link);
+}
+
 render_page('index', array(
     'password' => $password,
-    'free_rooms' => $free_rooms
+    'free_rooms' => $free_rooms,
+    'bookings' => $bookings
 ));

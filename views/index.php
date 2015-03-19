@@ -73,17 +73,14 @@
                 <tr>
                     <th class="table_head">Dato</th>
                     <th class="table_head">Romnavn</th>
-                    <th class="table_head"></th>
-                    <th class="table_head"></th>
-                    <th class="table_head"></th>
-                    <th class="table_head"></th>
-                    <th class="table_head"></th>
-                    <th class="table_head"></th>
+                    <th class="table_head">Handlinger</th>
                 </tr>
-                <tr>
-                    <td class="table_content">19.Mars</td>
-                    <td class="table_content">Rom 81</td>
-                    <td><button class="reserve_room">Endre</button></td>
-                </tr>
+                <?php foreach($bookings as $item): ?>
+                    <tr>
+                        <td class="table_content"><?php echo date('d/m', strtotime(str_replace('-','/', $item['booked_from']))); ?></td>
+                        <td class="table_content"><?php echo $item['room_name'] ?></td>
+                        <td><button class="reserve_room">Endre</button></td>
+                    </tr>
+                <?php endforeach; ?>
         </table>
     </div>

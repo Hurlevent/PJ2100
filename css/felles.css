@@ -232,10 +232,6 @@ tr:nth-child(odd) {
     background-color: #fff;
 }
 
-.button{
-    text-align: center;
-}
-
 .reserve_room{
     width: 90px;
     margin: 0;
@@ -252,10 +248,6 @@ tr:nth-child(odd) {
     border-color: #E66557;
     background-color: #E66557;
    
-}
-
-.button {
-    text-align: center;
 }
 
 .font_style_class{

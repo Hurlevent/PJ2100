@@ -21,14 +21,14 @@
                     <li>
                         <label for="checkbox">Prosjektor</label>
                         <select class="person_select" name="prosjektor">
-                            <option value="null">All</option>
+                            <option value="null">Alle</option>
                             <option value="HDMI">HDMI</option>
                             <option value="VGA">VGA</option>
                         </select>
                     </li>
                     <li><p>Antall personer</p>
                         <select class="person_select" name="capacity">
-                            <option value="null">All</option>
+                            <option value="null">Alle</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>

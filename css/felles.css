@@ -134,7 +134,7 @@ menu li{
 
 menu select{
     display:inline-block;
-    float: left;
+    float: right;
     position: relative;
 }
 

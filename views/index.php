@@ -81,21 +81,23 @@
     <!-- Finder End -------------------------------------->
     <!---------------------------------------------------->
     <!-- Your Reservations Start ------------------------->
-    <div id="reservation_list">
-        <table>
-                <tr>
-                    <th class="table_head">Dato</th>
-                    <th class="table_head">Romnavn</th>
-                    <th class="table_head">Handlinger</th>
-                </tr>
-                <?php foreach($bookings as $item): ?>
-                    <tr>
-                        <td class="table_content"><?php echo date('d/m', strtotime(str_replace('-','/', $item['booked_from']))); ?></td>
-                        <td class="table_content"><?php echo $item['room_name'] ?></td>
-                        <td><form action="unbook.php" method="POST"><input type="hidden" name="booking" value="<?php echo $item['bid']; ?>" /><input type="submit" class="reserve_room" value="Slett" /></form></td>
+    <div id="reservations_overview">
+        <div id="reservation_list" class="font_style_class">
+            <table>
+                    <tr class="reservation_list">
+                        <th class="reservation_head">Dato</th>
+                        <th class="reservation_head">Romnavn</th>
+                        <th class="reservation_head">Handlinger</th>
                     </tr>
-                <?php endforeach;  ?>
-        </table>
+                    <?php foreach($bookings as $item): ?>
+                        <tr>
+                            <td class="reservation_content"><?php echo date('d/m', strtotime(str_replace('-','/', $item['booked_from']))); ?></td>
+                            <td class="reservation_content"><?php echo $item['room_name'] ?></td>
+                            <td class="button"><form action="unbook.php" method="POST"><input type="hidden" name="booking" value="<?php echo $item['bid']; ?>" /><input type="submit" class="reserve_room" value="Slett" /></form></td>
+                        </tr>
+                    <?php endforeach;  ?>
+            </table>
+        </div>
     </div>
     <!-- Your Reservations End --------------------------->
     <!---------------------------------------------------->

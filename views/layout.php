@@ -14,11 +14,7 @@
         <!-- Logo Start -------------------------------------->
         
         <logo>
-<<<<<<< HEAD
-            <a href='index.php'><img src="bilder/Venstrejustert_svart_Oslo_ACT.svg" alt="logo"/></a>
-=======
             <a href='/'><img src="../bilder/WACT_Venstrejustert_svart_rgb_2.svg" alt="logo"/></a>
->>>>>>> origin/master
         </logo>
         
         <!-- Logo End ---------------------------------------->

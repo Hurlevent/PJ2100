@@ -4,11 +4,18 @@
   'user' => $user
 ])  ?>
 
+<h1>Logg inn</h1>
 
-<form action="login.php" method="POST">
-    <p>Brukernavn</p>
-    <input type="username" name="username" />
-    <p>Passord</p>
-    <input type="password" name="password" />
-    <input type="submit" value="Log in" />
+<form class="login-form" action="login.php" method="POST">
+    <p>
+      <label for="username">Brukernavn</label>
+      <input id="username" type="text" name="username" autocomplete="off" />
+    </p>
+    <p>
+      <label for="password">Passord</label>
+      <input id="password" type="password" name="password" />
+    </p>
+    <p>
+      <button class="submit-button" type="submit">Logg inn</button>
+    </p>
 </form>

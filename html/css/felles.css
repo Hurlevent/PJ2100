@@ -331,6 +331,61 @@ tr:nth-child(odd) {
 }
 
 /*-------------------------------------------*/
+/* Login Form */
+
+body, input, button, textarea {
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+    font-family: sans-serif;
+    font-size: 26px;
+    margin-bottom: 40px;
+}
+
+p, a, label {
+    color: #202020;
+}
+
+label {
+    font-family: sans-serif;
+    font-size: 16px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+input[type=text], input[type=password] {
+    font-family: sans-serif;
+    font-size: 18px;
+    padding: 11px 10px 9px;
+    border: 0;
+    background: #eee;
+    border-radius: 3px;
+    outline: none;
+    width: 40%;
+}
+
+.login-form p {
+    margin-bottom: 10px;
+}
+
+.login-form button {
+    margin-top: 20px;
+}
+
+.submit-button{
+    padding: 10px 15px 9px 13px;
+    border-radius:200px;
+    background-color: #FF7061;
+    border: 0;
+    color: white;
+    font-family: sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    height: 100%;
+}
+
+/*-------------------------------------------*/
 /* Reservation List */
 
 #reservation_list{

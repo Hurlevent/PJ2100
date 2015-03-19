@@ -14,7 +14,7 @@
         <!-- Logo Start -------------------------------------->
         
         <logo>
-            <a href='/'><img src="../bilder/WACT_Venstrejustert_svart_rgb_2.svg" alt="logo"/></a>
+            <a href='index.php'><img src="../bilder/WACT_Venstrejustert_svart_rgb_2.svg" alt="logo"/></a>
         </logo>
         
         <!-- Logo End ---------------------------------------->

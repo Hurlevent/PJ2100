@@ -87,6 +87,7 @@
 <?php
 if($bookings_count > 0) {
     ?>
+    <h3 class="font_style_class">Mine reservasjoner</h3>
     <div id="reservations_overview">
         <div id="reservation_list" class="font_style_class">
             <table>

@@ -3,7 +3,7 @@
   'user' => $user]);
     require_once('database.php');
  ?>
-    <!-- Finder Start -->
+    <!-- Finder Start EASTER EGG -->
 
     <div id="finder">
         <!-- Search Menu Start -->

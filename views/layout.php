@@ -3,7 +3,7 @@
   <head>
     <meta charset='UTF-8'>
     <title><?=$this->e($page_title)?></title>
-    <link rel='stylesheet' type='text/css' href='./html/css/felles.css'>
+    <link rel='stylesheet' type='text/css' href='./css/felles.css'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   </head>
   <body>

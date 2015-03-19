@@ -18,12 +18,12 @@
         <ul class="navigation font_style_class">
             <?php
              if ($user){
-                    echo "<li><a href='/minside.php'><img class='icon' src='./bilder/Person_Icon.svg' alt='icon'>" . $user["full_name"] . "</a></li><li><a href='/logout.php'>Logg ut</a></li>";
+                    echo "<li><a href='minside.php'><img class='icon' src='./bilder/Person_Icon.svg' alt='icon'>" . $user["full_name"] . "</a></li><li><a href='logout.php'>Logg ut</a></li>";
                } else {
-                   echo "<li><a href='/logg-inn.php'>Logg inn</a></li>";
+                   echo "<li><a href='logg-inn.php'>Logg inn</a></li>";
                }
             ?>
-            <li><a href="/hjelp.php">Hjelp</a></li>
+            <li><a href="hjelp.php">Hjelp</a></li>
         </ul>
         
         <!-- About End -->

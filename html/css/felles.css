@@ -18,6 +18,8 @@
 @charset "UTF-8";
 
 body {
+    margin-top:0px;
+    margin-bottom: 0px;
     margin-left: 50px;
     margin-right: 50px;
 }
@@ -76,12 +78,12 @@ nav ul {
 
 a{
     text-decoration: none;
-    color: rgb(00,00,00);
+    color: #202020;
     padding-bottom: 5px;
 }
 
 nav a:hover{ 
-    border-bottom:2px solid rgb(255,112,97); 
+    border-bottom:2px solid #FF7061; 
 }
 
 .navbar {
@@ -110,7 +112,7 @@ nav a:hover{
 }
 
 #about a:hover{
-    color: rgb(255,112,97);
+    color: #FF7061;
 }
 
 .icon {
@@ -190,9 +192,9 @@ menu label{
     margin-right: 0;
     font-family: sans-serif;
     font-size: 0.9em;
-    background-color: rgb(20,20,20);
-    border-color: rgb(20,20,20);
-    color: rgb(255,255,255);
+    background-color: #202020;
+    border-color: #202020;
+    color: #FFFFFF;
     
 }
 
@@ -275,7 +277,7 @@ tr:nth-child(odd) {
     background-color: #FF7061;
     border-color: #FF7061;
     border-style: solid;
-    color: white;
+    color: #FFFFFF;
 }
 
 .reserve_room:hover{
@@ -358,17 +360,11 @@ input[type=text], input[type=password] {
     font-family: sans-serif;
     font-size: 18px;
     padding: 11px 10px 9px;
-    box-sizing: border-box;
     border: 0;
     background: #eee;
     border-radius: 3px;
     outline: none;
-    width: 100%;
-}
-
-.login-area {
     width: 40%;
-    margin: 0 auto;
 }
 
 .login-form p {

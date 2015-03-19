@@ -6,10 +6,10 @@ $database = new DB();
 session_start();
 
 if (isset($_GET["error"]) && $_GET["error"] == "wronglogin"){
-    header("Location: views/logg-inn.php?error=wronglogin");
+    header("Location: ./logg-inn.php?error=wronglogin");
 }
 if (isset($_GET["error"]) && $_GET["error"] == "nologin"){
-    header("Location: views/logg-inn.php?error=nologin");
+    header("Location: ./logg-inn.php?error=nologin");
 }
 
 // checking if there already exist $_SESSION variables and if they can be used to log in

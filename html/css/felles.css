@@ -74,12 +74,12 @@ nav ul {
 
 a{
     text-decoration: none;
-    color: rgb(20,20,20);
+    color: #202020;
     padding-bottom: 5px;
 }
 
 nav a:hover{ 
-    border-bottom:2px solid rgb(255,112,97); 
+    border-bottom:2px solid #FF7061; 
 }
 
 .navbar {
@@ -108,7 +108,7 @@ nav a:hover{
 }
 
 #about a:hover{
-    color: rgb(255,112,97);
+    color: #FF7061;
 }
 
 .icon {
@@ -188,9 +188,9 @@ menu label{
     margin-right: 0;
     font-family: sans-serif;
     font-size: 0.9em;
-    background-color: rgb(20,20,20);
-    border-color: rgb(20,20,20);
-    color: rgb(255,255,255);
+    background-color: #202020;
+    border-color: #202020;
+    color: #FFFFFF;
     
 }
 
@@ -273,7 +273,7 @@ tr:nth-child(odd) {
     background-color: #FF7061;
     border-color: #FF7061;
     border-style: solid;
-    color: white;
+    color: #FFFFFF;
 }
 
 .reserve_room:hover{

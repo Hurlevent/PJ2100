@@ -54,6 +54,12 @@
         <div id="shedule_list" class="font_style_class">
             <table class="kalender">
                 <?php
+                if(!isset($_COOKIE["Prosjektor"])){
+                    setcookie("Prosjektor", "Alle", time() + 3600);
+                }
+                if(!isset($_COOKIE["Capacity"])){
+                    setcookie("Capacity", "Alle", time() + 3600);
+                }
                     echo "<tr>";
                     echo "<th class='table_details'>Valgt dato: " . $_SESSION["Date"] . "</th >";
                     echo "<th class='table_details'>Prosjektor: " . $_COOKIE["Prosjektor"] . "</th >";

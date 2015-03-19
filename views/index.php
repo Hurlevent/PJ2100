@@ -55,8 +55,8 @@
                 }
                     echo "<tr>";
                     echo "<th class='table_details'>Valgt dato: " . $_SESSION["Date"] . "</th >";
-                    echo "<th class='table_details'>Prosjektor: " . $_COOKIE["Prosjektor"] . "</th >";
                     echo "<th class='table_details'>Antall personer: " . $_COOKIE["Capacity"] . "</th >";
+                    echo "<th class='table_details'>Prosjektor: " . $_COOKIE["Prosjektor"] . "</th >";
                     echo "</tr>";
                 ?>
               <tr>

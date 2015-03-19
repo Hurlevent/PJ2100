@@ -1,10 +1,19 @@
-
 <?php  $this->layout('layout', [
   'page_title' => 'Rombooking CK45 – Logg inn',
   'user' => $user
 ])  ?>
 
-<h1>Logg inn</h1>
+<div class="login-area">
+  <h1>Logg inn</h1>
+
+<?php
+if (isset($_GET["error"]) && $_GET["error"] == "wronglogin"){
+    echo "<p><strong>Feil brukernavn eller passord!</strong></p>";
+}
+if(isset($_GET["error"]) && $_GET["error"] == "nologin"){
+    echo "<p><strong>Vennligst skriv inn brukernavn og passord!</strong></p>";
+}
+?>
 
 <form class="login-form" action="login.php" method="POST">
     <p>

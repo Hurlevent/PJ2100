@@ -7,8 +7,6 @@ class DB
     private $database = "eftoli14";
     public $connection = null;
 
-    public $allRooms = array();
-
     public function __construct()
     {
         $this->connection = mysqli_connect($this->host, $this->username, $this->password, $this->database);

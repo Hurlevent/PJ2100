@@ -24,7 +24,7 @@ body {
     margin-right: 50px;
 }
 
-#wrapper {
+.content {
     width: auto;
     max-width: 1080px;
     height: auto;

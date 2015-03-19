@@ -231,8 +231,8 @@ menu label{
 
 .table_head{
     font-size: 0.9em;
-    background-color: #000;
-    color: #FFF;
+    background-color: #202020;
+    color: #FFFFFF;
 }
 
 .table_content{
@@ -433,8 +433,8 @@ input[type=text], input[type=password] {
 
 .reservation_head{
     font-size: 0.9em;
-    background-color: #000;
-    color: #FFF;
+    background-color: #202020;
+    color: #FFFFFF;
    
 }
 

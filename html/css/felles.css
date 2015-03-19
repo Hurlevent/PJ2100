@@ -50,13 +50,14 @@ header {
 /*-------------------------------------------*/
 /* Logo*/
 
-logo{
+logo {
     position: relative;
     float: left;
     display: inline-block;
     max-width: 40%;
     margin-top: 28px; 
 }
+
 logo img{
     width: 100%;
     
@@ -364,6 +365,11 @@ input[type=text], input[type=password] {
     background: #eee;
     border-radius: 3px;
     outline: none;
+    width: 100%;
+}
+
+.login-area {
+    margin: 0 auto;
     width: 40%;
 }
 

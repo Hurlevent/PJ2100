@@ -457,6 +457,11 @@ footer {
     margin-left: 40px;
     margin-right: 40px;
     }
+
+footer p {
+    margin-bottom: 70px;
+    font-family: sans-serif;
+}
 /*-------------------------------------------*/
 /*---------- Footer Slutt -------------------*/
 /*-------------------------------------------*/

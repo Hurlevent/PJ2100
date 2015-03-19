@@ -29,7 +29,6 @@
                     <li><p>Antall personer</p>
                         <select class="person_select" name="capacity">
                             <option value="Alle">Alle</option>
-                            <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>

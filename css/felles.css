@@ -242,6 +242,7 @@ tr:nth-child(odd) {
     border-color: #FF7061;
     border-style: solid;
     color: #FFFFFF;
+    outline: none;
 }
 
 .reserve_room:hover{
@@ -350,6 +351,10 @@ input[type=text], input[type=password] {
     margin-top: 20px;
     outline: none;
     cursor: pointer;
+}
+
+button {
+    outline: none;
 }
 
 .submit-button{

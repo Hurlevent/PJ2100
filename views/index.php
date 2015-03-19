@@ -15,30 +15,19 @@
             <menu>
                 <dl>
                     <li>
-                        <?php
-                        echo "Dagens dato: " . $_SESSION["Date"];
-                        if(isset($_COOKIE["Prosjektor"]) && $_COOKIE["Prosjektor"] != "null"){
-                        echo "<br />Prosjektor: " . $_COOKIE["Prosjektor"];
-                        }
-                        if(isset($_COOKIE["Capacity"]) && $_COOKIE["Capacity"] != "null"){
-                        echo "<br />Antall personer: " . $_COOKIE["Capacity"];
-                        }
-                        ?>
-                    </li>
-                    <li>
                         <form action="update.php" method="POST">
                         <h3>Sett filter</h3>
                     </li>
                     <li>
-                        <input type="date" name="dato" />
+                        <input type="date" name="dato" value="<?php echo date('Y-m-d'); ?>" />
                     </li>
                     <li>
-                            <label for="checkbox">Prosjektor</label>
-                            <select class="person_select" name="prosjektor">
-                                <option value="null">All</option>
-                                <option value="HDMI">HDMI</option>
-                                <option value="VGA">VGA</option>
-                            </select>
+                        <label for="checkbox">Prosjektor</label>
+                        <select class="person_select" name="prosjektor">
+                            <option value="null">All</option>
+                            <option value="HDMI">HDMI</option>
+                            <option value="VGA">VGA</option>
+                        </select>
                     </li>
                     <li><p>Antall personer</p>
                         <select class="person_select" name="capacity">

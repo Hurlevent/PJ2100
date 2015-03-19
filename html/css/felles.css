@@ -28,7 +28,7 @@ body {
     height: auto;
     margin:auto;
     position: relative;
-	}
+}
 
 /*-------------------------------------------*/
 /*---------- Header Start -------------------*/
@@ -377,7 +377,8 @@ input[type=text], input[type=password] {
 
 .login-form button {
     margin-top: 20px;
-
+    outline: none;
+    cursor: pointer;
 }
 
 .submit-button{
@@ -390,6 +391,14 @@ input[type=text], input[type=password] {
     font-size: 16px;
     cursor: pointer;
     height: 100%;
+}
+
+.error {
+    padding: 10px 10px 7px;
+    border-radius: 3px;
+    font-family: sans-serif;
+    background-color: #FFF2BB;
+    width: auto;
 }
 
 /*-------------------------------------------*/

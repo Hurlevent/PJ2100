@@ -35,14 +35,16 @@
         <!-- About Start ------------------------------------->
     
         <div id="about" class="font_style_class">
-            <img class="icon" src="./bilder/Person_Icon.svg" alt="icon">
-            <?php
-             if ($user){
-                    echo "<a href='/minside.php'>" . $user["full_name"] . "</a><a href='logout.php'><button>Log ut</button></a>";
-               } else {
-                   echo "<a href='logg-inn.php'>Trykk her for å logge inn</a>";
-               }
-            ?>
+            <ul class="navigation">
+                
+                <?php
+                 if ($user){
+                        echo "<li><img class='icon' src='./bilder/Person_Icon.svg' alt='icon'><a href='/minside.php'>" . $user["full_name"] . "</a></li><li><a href='/logout.php'>Logg ut</a></li>";
+                   } else {
+                       echo "<li><a href='/logg-inn.php'>Logg inn</a></li>";
+                   }
+                ?>
+            </ul>
         </div>
         
         <!-- About End --------------------------------------->

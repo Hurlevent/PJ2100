@@ -62,7 +62,7 @@
                 }
                 ?>
               <tr>
-                <th class='table_head'>Room name</th>
+                <th class='table_head'>Rom</th>
                 <th class='table_head'>Plasser</th>
                 <th class='table_head'>Prosjektor</th>
                 <th class='table_head'>Handlinger</th>

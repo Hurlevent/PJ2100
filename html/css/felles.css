@@ -18,9 +18,10 @@
 @charset "UTF-8";
 
 body {
-    margin: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+}
 
-	}
 #wrapper {
     width: auto;
     max-width: 1080px;
@@ -28,6 +29,7 @@ body {
     margin:auto;
     position: relative;
 	}
+
 /*-------------------------------------------*/
 /*---------- Header Start -------------------*/
 /*-------------------------------------------*/
@@ -356,11 +358,17 @@ input[type=text], input[type=password] {
     font-family: sans-serif;
     font-size: 18px;
     padding: 11px 10px 9px;
+    box-sizing: border-box;
     border: 0;
     background: #eee;
     border-radius: 3px;
     outline: none;
+    width: 100%;
+}
+
+.login-area {
     width: 40%;
+    margin: 0 auto;
 }
 
 .login-form p {
@@ -369,6 +377,7 @@ input[type=text], input[type=password] {
 
 .login-form button {
     margin-top: 20px;
+
 }
 
 .submit-button{

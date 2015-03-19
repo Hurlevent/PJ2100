@@ -3,7 +3,14 @@
   'user' => $user]);
     require_once('database.php');
  ?>
+    <!---------------------------------------------------->
+    <!-- Finder Start ------------------------------------>
+
     <div id="finder">
+        
+        <!---------------------------------------------------->
+        <!-- Search Menu Start ------------------------------->
+        
         <div id="search_menu" class="font_style_class">
             <menu>
                 <dl>
@@ -53,6 +60,11 @@
                 </form>
             </menu>
         </div>
+
+        <!-- Search Menu End --------------------------------->
+        <!---------------------------------------------------->
+        <!-- Room Grid Start --------------------------------->
+
         <div id="shedule_list" class="font_style_class">
             <table class="kalender">
               <tr>
@@ -74,7 +86,12 @@
               <?php endforeach; ?>
             </table>
         </div>
+        <!-- Room Grid End ----------------------------------->
+        <!---------------------------------------------------->
     </div>
+    <!-- Finder End -------------------------------------->
+    <!---------------------------------------------------->
+    <!-- Your Reservations Start ------------------------->
     <div id="reservation_list">
         <table>
                 <tr>
@@ -86,8 +103,10 @@
                     <tr>
                         <td class="table_content"><?php echo date('d/m', strtotime(str_replace('-','/', $item['booked_from']))); ?></td>
                         <td class="table_content"><?php echo $item['room_name'] ?></td>
-                        <td><button class="reserve_room">Endre</button></td>
+                        <td><form action="unbook.php" method="POST"><input type="hidden" name="booking" value="<?php echo $item['bid']; ?>" /><input type="submit" class="reserve_room" value="Slett" /></form></td>
                     </tr>
-                <?php endforeach; ?>
+                <?php endforeach;  ?>
         </table>
     </div>
+    <!-- Your Reservations End --------------------------->
+    <!---------------------------------------------------->

@@ -8,6 +8,9 @@ if(!isset($_SESSION["Date"])){
     $currentDate = date('Y-m-d', $timestamp); // dagens dato
     $_SESSION["Date"] = $currentDate;
 }
+if(!isset($_SESSION["Id"])) {
+    $_SESSION["Id"] = 0;
+}
 
 if(isset($_COOKIE["Prosjektor"]) && $_COOKIE["Prosjektor"] != "null" || isset($_COOKIE["Capacity"]) && $_COOKIE["Capacity"] != "null"){
     if(isset($_COOKIE["Prosjektor"]) && isset($_COOKIE["Capacity"]) && $_COOKIE["Capacity"] == "null"){
@@ -35,18 +38,19 @@ if ($result = mysqli_query($link, $free_rooms_query)) {
 
 //$free_rooms = 'SELECT room.id, name, projector, capacity FROM room LEFT JOIN booking ON room.id = booking.room_id WHERE booking.booked_from NOT BETWEEN CURRENT_DATE() AND CURRENT_DATE() + INTERVAL 1 DAY OR booking.booked_from IS NULL';
 
-$bookings_query = 'SELECT room_id, booked_from, room.name AS room_name FROM booking LEFT JOIN room ON booking.room_id = room.id WHERE user_id = 1 AND booked_from >= CURRENT_DATE()';
+    $bookings_query = "SELECT room_id, booked_from, room.name AS room_name, booking.id AS bid FROM booking LEFT JOIN room ON booking.room_id = room.id WHERE user_id = " . $_SESSION["Id"] . " AND booked_from >= CURRENT_DATE() ORDER BY booked_from ASC;";
 
-if ($result = mysqli_query($link, $bookings_query)) {
-  $bookings = array();
-  $bookings_count = mysqli_num_rows($result);
-  for($i = 0;$i < $bookings_count;$i++){
-    $row = $result->fetch_array(MYSQLI_ASSOC);
-    array_push($bookings, $row);
-  }
-} else {
-  echo 'Database error: ' . mysqli_error($link);
-}
+    if ($result = mysqli_query($link, $bookings_query)) {
+        $bookings = array();
+        $bookings_count = mysqli_num_rows($result);
+        for ($i = 0; $i < $bookings_count; $i++) {
+            $row = $result->fetch_array(MYSQLI_ASSOC);
+            array_push($bookings, $row);
+        }
+    } else {
+        echo 'Database error: ' . mysqli_error($link);
+    }
+
 
 render_page('index', array(
     'password' => $password,

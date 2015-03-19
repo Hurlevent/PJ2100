@@ -55,5 +55,6 @@ if ($result = mysqli_query($link, $free_rooms_query)) {
 render_page('index', array(
     'password' => $password,
     'free_rooms' => $free_rooms,
-    'bookings' => $bookings
+    'bookings' => $bookings,
+    'bookings_count' => $bookings_count
 ));

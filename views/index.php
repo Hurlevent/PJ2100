@@ -4,9 +4,10 @@
     require_once('database.php');
  ?>
     <!-- Finder Start EASTER EGG -->
-
     <div id="finder">
-        <!-- Search Menu Start -->
+        
+        <!---------------------------------------------------->
+        <!-- Search Menu Start ------------------------------->
         
         <div id="search_menu" class="font_style_class">
             <menu>
@@ -16,7 +17,7 @@
                         <h3>Sett filter</h3>
                     </li>
                     <li>
-                        <input class="datepicker" type="date" name="dato" value="<?php echo date('Y-m-d'); ?>" />
+                        <input type="date" name="dato" value="<?php echo date('Y-m-d'); ?>" />
                     </li>
                     <li>
                         <label for="checkbox">Prosjektor</label>
@@ -47,8 +48,9 @@
             </menu>
         </div>
 
-        <!-- Search Menu End -->
-        <!-- Room Grid Start -->
+        <!-- Search Menu End --------------------------------->
+        <!---------------------------------------------------->
+        <!-- Room Grid Start --------------------------------->
 
         <div id="shedule_list" class="font_style_class">
             <table class="kalender">
@@ -71,24 +73,29 @@
               <?php endforeach; ?>
             </table>
         </div>
-        <!-- Room Grid End -->
+        <!-- Room Grid End ----------------------------------->
+        <!---------------------------------------------------->
     </div>
-    <!-- Finder End -->
-    <!-- Your Reservations Start -->
-    <div id="reservation_list">
-        <table>
-                <tr>
-                    <th class="table_head">Dato</th>
-                    <th class="table_head">Romnavn</th>
-                    <th class="table_head">Handlinger</th>
-                </tr>
-                <?php foreach($bookings as $item): ?>
-                    <tr>
-                        <td class="table_content"><?php echo date('d/m', strtotime(str_replace('-','/', $item['booked_from']))); ?></td>
-                        <td class="table_content"><?php echo $item['room_name'] ?></td>
-                        <td><form action="unbook.php" method="POST"><input type="hidden" name="booking" value="<?php echo $item['bid']; ?>" /><input type="submit" class="reserve_room" value="Slett" /></form></td>
+    <!-- Finder End -------------------------------------->
+    <!---------------------------------------------------->
+    <!-- Your Reservations Start ------------------------->
+    <div id="reservations_overview">
+        <div id="reservation_list" class="font_style_class">
+            <table>
+                    <tr class="reservation_list">
+                        <th class="reservation_head">Dato</th>
+                        <th class="reservation_head">Romnavn</th>
+                        <th class="reservation_head">Handlinger</th>
                     </tr>
-                <?php endforeach;  ?>
-        </table>
+                    <?php foreach($bookings as $item): ?>
+                        <tr>
+                            <td class="reservation_content"><?php echo date('d/m', strtotime(str_replace('-','/', $item['booked_from']))); ?></td>
+                            <td class="reservation_content"><?php echo $item['room_name'] ?></td>
+                            <td class="button"><form action="unbook.php" method="POST"><input type="hidden" name="booking" value="<?php echo $item['bid']; ?>" /><input type="submit" class="reserve_room" value="Slett" /></form></td>
+                        </tr>
+                    <?php endforeach;  ?>
+            </table>
+        </div>
     </div>
-    <!-- Your Reservations End -->
+    <!-- Your Reservations End --------------------------->
+    <!---------------------------------------------------->

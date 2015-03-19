@@ -28,7 +28,7 @@ body {
     width: auto;
     max-width: 1080px;
     height: auto;
-    margin:auto;
+    margin: auto;
 }
 
 /*-------------------------------------------*/
@@ -40,10 +40,8 @@ body {
 header {
     width: 100%;
     max-height: 200px;
+    margin: 0 auto;
     height: auto;
-    display: inline-block;
-    position: relative;
-    float: left;
     margin-bottom: 2%;
     max-width: 1080px;
 }

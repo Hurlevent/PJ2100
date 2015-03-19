@@ -24,6 +24,7 @@
                             <option value="Alle">Alle</option>
                             <option value="HDMI">HDMI</option>
                             <option value="VGA">VGA</option>
+                            <option value="Ingen">Ingen</option>
                         </select>
                     </li>
                     <li><p>Antall personer</p>

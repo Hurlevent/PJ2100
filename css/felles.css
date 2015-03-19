@@ -338,11 +338,11 @@ input[type=text], input[type=password] {
 .datepicker {
     font-size: 20px;
     font-family: sans-serif;
-    padding: 5px;
+    padding: 5px 5px 1px;
     border: 0;
     background: #eee;
     box-sizing: border-box;
-    width: 210px;
+    width: 100%;
 }
 
 .login-area {

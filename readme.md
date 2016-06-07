@@ -1,5 +1,7 @@
 # CK32 Roombooking
 
+## [The website is available here](http://home.nith.no/~eftoli14/PJ2100/)
+
 ## Hvordan sette opp kjøring av nettsiden på egen maskin
 
 - Installer [Composer](https://getcomposer.org/)
